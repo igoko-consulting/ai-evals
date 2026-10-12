@@ -7,9 +7,9 @@
 
 ## 1. Product Strategy, The Context
 
-- **Target user:** _…_
-- **Key use case:** _…_
-- **Value proposition:** _…_
+- **Target user:** VP-level strategists and product leaders at Ascend Analytics' top 50 enterprise accounts (Fortune 500, $50k+ a year each), who use Ascend's verified market data to set roadmaps.
+- **Key use case:** asking plain-language market questions, such as "Compare the pricing models of Stripe and Adyen" or "Summarise the negative G2 reviews for Salesforce", and getting an answer in seconds instead of digging through a dense platform by hand.
+- **Value proposition:** Ascend IQ turns Ascend's verified data into fast answers, removing the time-to-insight friction that is driving disengagement and putting Q4 retention at risk.
 
 ## 2. Measurements, The Execution
 

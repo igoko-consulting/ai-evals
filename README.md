@@ -30,7 +30,7 @@ This is a **template repo**. Click **Use this template → Create a new reposito
 
 ## The feature in one sentence
 
-_What LLM feature are you evaluating, who relies on it, and what is the cost of getting it wrong?_
+Ascend IQ, an AI agent that answers plain-language market-intelligence questions for VP-level strategists at Ascend Analytics' top 50 enterprise accounts; a wrong answer puts $50k+ renewals and the company's most valuable relationships at risk.
 
 ---
 
