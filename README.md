@@ -12,8 +12,8 @@ This is a **template repo**. Click **Use this template → Create a new reposito
 
 | Module | Artifact | Status | File |
 |---|---|---|---|
-| M1 | **Evaluation Strategy Canvas** | ☐ | `01-evaluation-strategy/strategy-canvas.md` |
-| M1 | **Eval harness proof** (links + screenshots) | ☐ | `01-evaluation-strategy/eval-harness-proof.md` |
+| M1 | **Evaluation Strategy Canvas** | ✅ | `01-evaluation-strategy/strategy-canvas.md` |
+| M1 | **Eval harness proof** (links + screenshots) | ✅ | `01-evaluation-strategy/eval-harness-proof.md` |
 | M2 | **Failure audit log** | ☐ | `02-failure-discovery/audit-log.md` |
 | M2 | **Failure Taxonomy** | ☐ | `02-failure-discovery/failure-taxonomy.md` |
 | M3 | **Runnable eval suite** (results) | ☐ | `03-eval-suites/lab-1-eval-suite.md` |
