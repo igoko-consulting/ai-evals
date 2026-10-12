@@ -48,15 +48,16 @@ Version B, 100 words:
 - **Dataset:** `Module1Output`, four rows: Version A and Version B from two generators, all on the Q4 Marketing Campaign Update email.
 - **Generators:** Claude Opus 5.5 (Anthropic) and GPT-6 (OpenAI). Same system prompts, same user message, a fresh turn for each version.
 - **Judge:** Conciseness LLM-as-a-Judge. 1 = concise and faithful (every fact matches the email, nothing invented, no padding), 0 = not. Summaries labelled 1 to 4 so the judge can't see which model wrote them.
-- **Judge rule:** the judge comes from a different model family from the generator, to avoid self-preference bias. Claude's scores on the GPT-6 rows are valid. Claude's scores on its own rows are self-scores, kept as a bias check until GPT-6 or Gemini scores them.
+- **Judge rule:** the judge comes from a different model family from the generator, to avoid self-preference bias. GPT-6 judged Claude's rows; Claude Opus 5.5 judged GPT-6's rows.
 
 | # | Generator | Version | Words | Judge | Score | Reason |
 |---|---|---|---|---|---|---|
-| 1 | Claude Opus 5.5 | A, concise | 52 | Claude Opus 5.5 (self-score) | 1 | All four facts kept, nothing added, no padding. |
-| 2 | Claude Opus 5.5 | B, narrative | 97 | Claude Opus 5.5 (self-score) | 0 | Says the campaign "moved" rather than was delayed; adds "ready to launch as soon as it clears" and "keep this progress going", neither in the email. |
+| 1 | Claude Opus 5.5 | A, concise | 52 | GPT-6 | 1 | Concise and faithful; includes all key facts without adding information. |
+| 2 | Claude Opus 5.5 | B, narrative | 97 | GPT-6 | 0 | Adds unsupported claims about assets being ready to launch immediately, measuring results and sustaining progress, making it less concise and not fully faithful. |
 | 3 | GPT-6 | A, concise | 53 | Claude Opus 5.5 | 1 | All four facts kept, nothing added, no padding. |
 | 4 | GPT-6 | B, narrative | 100 | Claude Opus 5.5 | 0 | Facts intact, but pads the close with a purpose the email never states ("measurement readiness", "informed decisions"). |
 
+- **Self-preference check:** Claude also scored its own rows 1 and 0, matching GPT-6, so no self-preference bias showed on this pair. The reasons differed: Claude flagged "moved" softening the delay, GPT-6 didn't. Agreement on the score is not agreement on the reasoning.
 - **Limit:** rows 1 and 2 were generated in a session that already held notes on the likely failure modes, which may have made them more faithful than a clean run.
 
 ## Cold-start, the prompt you used to seed a starter dataset

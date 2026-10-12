@@ -53,6 +53,8 @@ Session 1, 12 Oct 2026. Sources: Module 1 slides, pre-read, [First Eval Lab walk
 
 ## Quick poll
 
+The class discussed both scenarios openly without settling on an answer. My view:
+
 - **Scenario A, creative co-pilot, creative and on-brand at scale:** hybrid. Editorial reviewers write the rubric and label a golden set; an LLM judge calibrated to that set scores volume; code catches banned terms, length and format. Creativity is subjective, so the human anchor isn't optional.
 - **Scenario B, "friendlier" chatbot, 10k conversations, one week:** LLM-as-a-Judge, pairwise old vs new across all 10k, checked first against a few hundred human-labelled conversations; code checks for length, refusal and safety regressions. Also track resolution rate: friendlier isn't better if it solves fewer problems.
 
