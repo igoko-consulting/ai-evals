@@ -29,17 +29,16 @@
 
 | Rank | Failure Type | Trust Tag | Agentic Mode | Frequency | Severity | Business Impact |
 |---|---|---|---|---|---|---|
-| _Example (replace): 1_ | _Fabricated Pricing_ | _#HALLUCINATION_ | _output-level_ | _4/20_ | _P0_ | _Contract disputes; blocks Enterprise renewals._ |
-| 1 | _…_ | _…_ | _…_ | _…/20_ | _P0–P3_ | _…_ |
-| 2 | _…_ | _…_ | _…_ | _…/20_ | _P0–P3_ | _…_ |
-| 3 | _…_ | _…_ | _…_ | _…/20_ | _P0–P3_ | _…_ |
+| 1 | **Inflated facts:** answers say more than the source does. Tentative becomes confirmed, a Zapier route becomes a "seamless integration", an engineering hub becomes an HQ, API-only becomes "yes" to native export. Audit rows 3, 4, 5, 11, 12, 14. | #HALLUCINATION | Output-level | 13/20, HIGH (this pattern 6/20) | P0 | VPs make roadmap and competitive calls on capabilities and facts that aren't true. Breaks the verified-data promise and puts top-50 renewals at risk. |
+| 2 | **Wrong numbers on the core use case:** a stale price from a cached page, and a rate-limit comparison that gets the facts backwards in the client's favour. Audit rows 1, 7. | #HALLUCINATION | Output-level; row 1 points to stale data in retrieval | 13/20, HIGH (this pattern 2/20) | P0 | Pricing and competitor comparisons are the headline use case. A wrong number in a board pack is the error a client won't forgive. |
+| 3 | **False refusals:** the answer is in the source, but the agent says it can't find or access it. Audit rows 8, 18. | #ROBUSTNESS | Output-level; row 8 points to a retrieval gap | 2/20, LOW | P1 | Sends users back to digging by hand, the friction Ascend IQ exists to remove. A missed SOC2 badge can mislead a competitive or vendor assessment. |
 
 ## #1 Risk · Business Impact Statement
 
-> _Template: "This failure matters because [technical error] results in [business consequence]." Name the concrete cost — revenue, churn, legal, or trust — not the bug._
+> This failure matters because Ascend IQ overstates what its sources say in 6 of 20 audited answers, which results in Fortune 500 strategists acting on facts that aren't true and puts our top-50 renewals at risk.
 
 ## Defending the Prioritization
 
-- _Why the #1 risk is P0 (severity), independent of how often it happens._
-- _Frequency threshold: ≥3 of 20 = HIGH._
-- _Severity anchored to the trust metrics you chose in the Module 1 Strategy Canvas._
+- **Anchored to the Module 1 promise** that every figure traces back to Ascend's verified data. Risks 1 and 2 break it directly. Risk 3 breaks the speed half, because users go back to digging by hand.
+- **Frequency and scale:** #HALLUCINATION at 13 of 20 is HIGH; #ROBUSTNESS at 2 of 20 is LOW. P-levels follow the pre-read's severity × frequency quadrants; the template's severity-only scale gives the same ranking.
+- **Risk accepted for now (P2):** minor invented details (audit rows 2, 6, 9, 13, 19) and off-brand tone (row 16). Tone sits outside the core Q&A use case, and a person reviews drafts before sending.
