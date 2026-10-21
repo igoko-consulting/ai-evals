@@ -40,5 +40,5 @@
 ## Defending the Prioritization
 
 - **Anchored to the Module 1 promise** that every figure traces back to Ascend's verified data. Risks 1 and 2 break it directly. Risk 3 breaks the speed half, because users go back to digging by hand.
-- **Frequency and scale:** #HALLUCINATION at 13 of 20 is HIGH; #ROBUSTNESS at 2 of 20 is LOW. P-levels follow the pre-read's severity × frequency quadrants; the template's severity-only scale gives the same ranking.
+- **Frequency and scale:** #HALLUCINATION at 13 of 20 is HIGH; #ROBUSTNESS at 2 of 20 is LOW. P-levels follow the pre-read's severity × frequency quadrants; the template's severity-only scale gives the same ranking. The ranking doesn't depend on the strict rule: rows 1, 3, 4, 7, 8, 11 and 14 fail under every judge and rubric tested (audit log, judge sensitivity check).
 - **Risk accepted for now (P2):** minor invented details (audit rows 2, 6, 9, 13, 19) and off-brand tone (row 16). Tone sits outside the core Q&A use case, and a person reviews drafts before sending.
