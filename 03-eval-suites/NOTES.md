@@ -90,7 +90,7 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
 ## Labs
 
 - **Lab 1, output suite:** three checks for inflated facts, run on all 20 answers. Output: [eval-suite.md](eval-suite.md).
-- **Lab 2, eval spec:** the five parts and three messages. Output: `eval-spec.md` (next).
+- **Lab 2, eval spec:** the five parts and three messages. Output: [eval-spec.md](eval-spec.md).
 - **Trajectory and calibration labs:** the support-agent trace and the κ loop. Outputs: `trajectory.md`, `judge-calibration.md`.
 
 ## Discussion questions
