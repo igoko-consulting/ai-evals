@@ -37,7 +37,7 @@ Put the rule check in front of every answer as a release gate, with the judge ru
 
 ## How this was run
 
-- **Real cases:** the six Risk 1 rows in the [failure taxonomy](../02-failure-discovery/failure-taxonomy.md): 3, 4, 5, 11, 12, 14. False alarms count rows the [audit](../02-failure-discovery/audit-log.md) passed (10, 15, 17, 20). Scores: 1 = pass, 0 = fail.
+- **Real cases:** the six Risk 1 rows in the [failure taxonomy](../02-failure-discovery/failure-taxonomy.md): 3, 4, 5, 11, 12, 14. False alarms count rows the [audit](../02-failure-discovery/audit-log.md) passed (10, 13, 15, 17, 20). Scores: 1 = pass, 0 = fail.
 - **Rule check and safety rule:** run as code in [ascend_suite.py](ascend_suite.py), so they give the same result every time.
 - **Judge:** Claude Haiku 5.5, one fresh call per row, applying the check exactly as written, with no sight of the audit. Run twice, as the lab's extra step: 0 of 20 calls changed. In Module 2 the same model flipped on two rows under a vaguer rubric; a check written for one failure is far more stable.
 - **Cross-check:** GPT-6 ran the lab tool's prompt, with the audit pasted in ([reply](results/gpt6-suite-reply.md)). Its row-level calls matched the code exactly on the rule check and safety rule, and its judge also caught all six real cases. Its judge also failed rows 2, 6, 8 and 9, which aren't inflated facts, so it judged beyond the check as written, most likely primed by the audit in the same prompt. Its own summary table contradicted its row-level calls on every line, with wrong denominators and audit failures counted as false alarms, so every count here comes from code.

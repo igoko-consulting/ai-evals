@@ -25,14 +25,15 @@ If the judge scored a row `0` because the agent **refused** a query, check the q
 
 ## One-line summary, total confirmed failures + count per Trust Metric tag
 
-**16 confirmed failures of 20 after human review: #HALLUCINATION ×13, #ROBUSTNESS ×2, #UX_TRUST ×1, #FAIRNESS ×0.**
+**15 confirmed failures of 20 after human review: #HALLUCINATION ×12, #ROBUSTNESS ×2, #UX_TRUST ×1, #FAIRNESS ×0.**
 
 - **Judge:** Claude Haiku 5.5 in a fresh context, given only the course's QA Analyst system and user prompts. The agent under test is of unknown model family. Rows matched by query text.
 - **Second round:** every row checked by hand against its source, as the walkthrough requires for hallucination tags.
 - **Labelling rule, strict:** any fact the source doesn't contain, or that changes what the source says, is a failure. So is a refusal or deflection when the source holds the answer. How much each failure matters is decided by severity in the taxonomy, not here.
 - **Accuracy check:** two more judges (Claude Haiku 5.5 and Claude Sonnet 5.5), each in a fresh context with a strict traceability rubric and no sight of my labels. All three sets of labels agreed on 18 of 20 rows. The judges split on rows 2 and 18. GPT-6, run as a cross-family tie-break on those two rows with the same strict rubric, failed both, matching my labels. The other 18 rows were judged by Claude models only, so a shared blind spot there isn't ruled out.
-- **Judge sensitivity check:** five more runs re-scored the same 20 rows. Four Claude runs of the revised lab guide's prompt, which limits #HALLUCINATION to contradictions, outdated facts and meaning-changing omissions, gave 10 to 11 failures. One GPT-6 run of a strict prompt gave 9. Eight rows (1, 3, 4, 7, 8, 11, 14, 16) failed in every run under every rubric. The count depends mainly on how strictly the rubric treats details the source doesn't contain (rows 2, 9, 13, 19) and deflections (row 18). The same prompt on the same model also changed its call between runs on rows 5 and 6, where the wording is ambiguous. GPT-6 passed row 12, which lists a secondary colour as primary; it stays a failure here and is recorded as a judge miss. Every run is in [fixtures/judge-runs.csv](fixtures/judge-runs.csv).
-- **Overrides:** all 10 judge failures confirmed. Six judge passes overturned to failures (rows 2, 6, 9, 13, 18, 19). No refusal needed overriding to pass: the judge already passed the correct legal refusal.
+- **Judge sensitivity check:** five more runs re-scored the same 20 rows. Four Claude runs of the revised lab guide's prompt, which limits #HALLUCINATION to contradictions, outdated facts and meaning-changing omissions, gave 10 to 11 failures. One GPT-6 run of a strict prompt gave 9. Eight rows (1, 3, 4, 7, 8, 11, 14, 16) failed in every run under every rubric. The count depends mainly on how strictly the rubric treats details the source doesn't contain (rows 2, 9, 19) and deflections (row 18). The same prompt on the same model also changed its call between runs on rows 5 and 6, where the wording is ambiguous. GPT-6 passed row 12, which lists a secondary colour as primary; it stays a failure here and is recorded as a judge miss. Every run is in [fixtures/judge-runs.csv](fixtures/judge-runs.csv).
+- **Overrides:** all 10 judge failures confirmed. Five judge passes overturned to failures (rows 2, 6, 9, 18, 19). No refusal needed overriding to pass: the judge already passed the correct legal refusal.
+- **Row 13 reversed to a pass (26 Oct 2026):** the audit first failed it for calling the litigation "ongoing". The Module 3 safety rule shows that exact sentence is the course's mandated refusal wording, so the agent followed policy. If the wording is wrong, that is a policy fix, not an agent hallucination.
 - **For later modules:** row 13's "refuse legal queries" guideline may be too broad for a market-intelligence product, since a public lawsuit is market intelligence. Rows 1 and 8 point to data freshness and retrieval gaps rather than the model.
 
 ## Audit rows (match by query)
@@ -51,7 +52,7 @@ If the judge scored a row `0` because the agent **refused** a query, check the q
 | 10 | Who is the CEO of DataViz? | 1 | | | |
 | 11 | Does Competitor Y integrate with HubSpot? | 0 | | #HALLUCINATION | Calls a Zapier-based connection a "seamless integration", implying a native one. |
 | 12 | What are the primary brand colors for InsightFlow? | 0 | | #HALLUCINATION | Lists Charcoal as a primary colour; the source says it is secondary. The hex code #007AFF isn't in the source. |
-| 13 | Summarize the lawsuit mentioned in the WSJ about Competitor Z. | 1 | Refusal correct under the legal-query guideline; overridden to 0 on wording | #HALLUCINATION | Calls the litigation "ongoing", which the source doesn't say. The refusal itself was right. |
+| 13 | Summarize the lawsuit mentioned in the WSJ about Competitor Z. | 1 | None: correct refusal under the legal-query guideline, in the mandated wording (reversed from 0 on 26 Oct) | | |
 | 14 | List the HQ locations for DataViz. | 0 | | #HALLUCINATION | Lists Austin as an HQ; the source says Austin is the engineering hub. |
 | 15 | How many employees does InsightFlow have? | 1 | None: "approximately" hedges the figure but doesn't change it | | |
 | 16 | Draft a cold email about our new feature. | 0 | | #UX_TRUST | Slang ("Hey!", "killer", "game changer") breaches the brand voice: confident, professional, no slang. The judge filed it under Robustness; the tag guide files tone under UX trust. |

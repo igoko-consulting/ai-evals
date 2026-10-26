@@ -6,8 +6,8 @@
 
 | Rank | Failure | Audit rows | Trust tag | Frequency | Severity | Business impact |
 |---|---|---|---|---|---|---|
-| 1 | Inflated facts | 3, 4, 5, 11, 12, 14 | #HALLUCINATION | 13/20, HIGH | P0 | VPs make roadmap and competitive calls on facts that aren't true, which puts top-50 renewals at risk. |
-| 2 | Wrong numbers on the core use case | 1, 7 | #HALLUCINATION | 13/20, HIGH | P0 | Pricing and competitor comparisons are the headline use case. A wrong number in a board pack is the error a client won't forgive. |
+| 1 | Inflated facts | 3, 4, 5, 11, 12, 14 | #HALLUCINATION | 12/20, HIGH | P0 | VPs make roadmap and competitive calls on facts that aren't true, which puts top-50 renewals at risk. |
+| 2 | Wrong numbers on the core use case | 1, 7 | #HALLUCINATION | 12/20, HIGH | P0 | Pricing and competitor comparisons are the headline use case. A wrong number in a board pack is the error a client won't forgive. |
 | 3 | False refusals | 8, 18 | #ROBUSTNESS | 2/20, LOW | P1 | Sends users back to digging by hand, the friction Ascend IQ exists to remove. A missed SOC2 badge can mislead a vendor assessment. |
 
 - **Frequency** counts every audited answer with that tag (3 or more of 20 is HIGH). Risks 1 and 2 share the #HALLUCINATION count; on their own they cover 6 and 2 answers.
@@ -30,4 +30,4 @@
 
 - **Anchored to the Module 1 promise** that every figure traces back to Ascend's verified data. Risks 1 and 2 break it directly. Risk 3 breaks the speed half, because users go back to digging by hand.
 - **Holds under any rubric:** rows 1, 3, 4, 7, 8, 11 and 14 fail under every judge and rubric tested (audit log, judge sensitivity check), and a severity-only scale gives the same P-levels. The ranking doesn't rest on the strict labelling rule.
-- **Risk accepted for now:** minor added or altered details (rows 2, 6, 9, 13, 19) are P2: low severity on a high-frequency tag. Off-brand tone (row 16) is P3: low severity and low frequency, outside the core Q&A use case, and a person reviews drafts before sending.
+- **Risk accepted for now:** minor added or altered details (rows 2, 6, 9, 19) are P2: low severity on a high-frequency tag. Off-brand tone (row 16) is P3: low severity and low frequency, outside the core Q&A use case, and a person reviews drafts before sending.

@@ -11,7 +11,7 @@ row,query,final_label,final_tag,course_prompt_haiku_13oct,strict_prompt_haiku_13
 10,Who is the CEO of DataViz?,1,,1,1,1,,1,1,1,1,1
 11,Does Competitor Y integrate with HubSpot?,0,#HALLUCINATION,0,0,0,,0,0,0,0,0
 12,What are the primary brand colors for InsightFlow?,0,#HALLUCINATION,0,0,0,,0,0,0,0,1
-13,Summarize the lawsuit mentioned in the WSJ about Competitor Z.,0,#HALLUCINATION,1,0,0,,1,1,1,1,1
+13,Summarize the lawsuit mentioned in the WSJ about Competitor Z.,1,,1,0,0,,1,1,1,1,1
 14,List the HQ locations for DataViz.,0,#HALLUCINATION,0,0,0,,0,0,0,0,0
 15,How many employees does InsightFlow have?,1,,1,1,1,,1,1,1,1,1
 16,Draft a cold email about our new feature.,0,#UX_TRUST,0,0,0,,0,0,0,0,0
