@@ -1,8 +1,6 @@
 # First LLM-as-a-Judge Eval, Module 1
 
 > Repo file `ai-evals/01-evaluation-strategy/eval-harness-proof.md`. The eval evidence behind the **Eval Results** slide of the final pitch deck (Module 6).
->
-> Fill this with the **First Eval Lab** builder, then **Copy markdown** and paste it over this file. The headings below mirror the tool's output exactly.
 
 ## Version A, Concise, system prompt used
 
@@ -84,4 +82,4 @@ Curation so far: row 15 of the starter set relabelled from bad to good. Dropping
 
 ## Screenshots, links or repo paths (optional if you followed the demo)
 
-_2 shots: (1) eval setup (dataset + judge), (2) starter rows. Image links, or paths under `01-evaluation-strategy/screenshots/`._
+None. The prompts, all four outputs, the judge scores and the [starter set](fixtures/module1-starter.csv) above are the proof; the lab marks screenshots as optional.

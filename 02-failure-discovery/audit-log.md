@@ -1,14 +1,8 @@
 # Ascend IQ Failure Audit, Module 2
 
-> Repo file `ai-evals/02-failure-discovery/audit-log.md` (your raw scored rows). Feeds `failure-taxonomy.md`.
+> Repo file `ai-evals/02-failure-discovery/audit-log.md`, the scored audit of 20 Ascend IQ answers. Feeds `failure-taxonomy.md`.
 
-## How to complete this file
-
-1. Open the **M2 · Failure Audit Walkthrough** lab page and follow Steps 1–4: download the 20-row Ascend IQ dataset, configure the LLM-as-a-Judge in LangSmith (or promptfoo if LangSmith is blocked), score all 20 rows, apply human overrides, then tag each confirmed failure.
-2. Use the **"Build your deliverable"** workspace at the bottom of that lab page. Click **📋 Copy markdown** and paste it over the template below (or fill the table in directly).
-3. **Match rows by the `query` text, not the row number** — LangSmith reorders on upload.
-
-**Definition of done —** you're finished when: (1) all 20 rows are logged with a judge score (`1` = PASS / `0` = FAIL); (2) every row the judge failed for a *refusal* has a human-override decision; (3) each remaining FAIL has a Trust Metric tag **and** a one-line reason; (4) the one-line summary at the top matches the counts in the table.
+## Labelling guide
 
 ### Trust Metric tags (assign one per confirmed failure)
 
@@ -27,16 +21,24 @@ If the judge scored a row `0` because the agent **refused** a query, check the q
 
 **15 confirmed failures of 20 after human review: #HALLUCINATION ×12, #ROBUSTNESS ×2, #UX_TRUST ×1, #FAIRNESS ×0.**
 
+### How the labels were made
+
 - **Judge:** Claude Haiku 5.5 in a fresh context, given only the course's QA Analyst system and user prompts. The agent under test is of unknown model family. Rows matched by query text.
 - **Second round:** every row checked by hand against its source, as the walkthrough requires for hallucination tags.
 - **Labelling rule, strict:** any fact the source doesn't contain, or that changes what the source says, is a failure. So is a refusal or deflection when the source holds the answer. How much each failure matters is decided by severity in the taxonomy, not here.
+- **Overrides:** all 10 judge failures confirmed. Five judge passes overturned to failures (rows 2, 6, 9, 18, 19). No refusal needed overriding to pass: the judge already passed the correct legal refusal.
+- **Row 13 reversed to a pass (26 Oct 2026):** the audit first failed it for calling the litigation "ongoing". The Module 3 safety rule shows that exact sentence is the course's mandated refusal wording, so the agent followed policy. If the wording is wrong, that is a policy fix, not an agent hallucination.
+
+### How they were checked
+
 - **Accuracy check:** two more judges (Claude Haiku 5.5 and Claude Sonnet 5.5), each in a fresh context with a strict traceability rubric and no sight of my labels. All three sets of labels agreed on 18 of 20 rows. The judges split on rows 2 and 18. GPT-6, run as a cross-family tie-break on those two rows with the same strict rubric, failed both, matching my labels. The other 18 rows were judged by Claude models only, so a shared blind spot there isn't ruled out.
 - **Judge sensitivity check:** five more runs re-scored the same 20 rows. Four Claude runs of the revised lab guide's prompt, which limits #HALLUCINATION to contradictions, outdated facts and meaning-changing omissions, gave 10 to 11 failures. One GPT-6 run of a strict prompt gave 9. Eight rows (1, 3, 4, 7, 8, 11, 14, 16) failed in every run under every rubric. The count depends mainly on how strictly the rubric treats details the source doesn't contain (rows 2, 9, 19) and deflections (row 18). The same prompt on the same model also changed its call between runs on rows 5 and 6, where the wording is ambiguous. GPT-6 passed row 12, which lists a secondary colour as primary; it stays a failure here and is recorded as a judge miss. Every run is in [fixtures/judge-runs.csv](fixtures/judge-runs.csv).
-- **Overrides:** all 10 judge failures confirmed. Five judge passes overturned to failures (rows 2, 6, 9, 18, 19). No refusal needed overriding to pass: the judge already passed the correct legal refusal.
-- **Independent re-label (26 Oct 2026):** GPT-6, in a fresh chat with only this audit's written rule and the 20 answers shuffled and unlabelled, matched 19 of 20 labels (κ 0.88), including the row 13 reversal below. A second run, prompted as a strict, sceptical human, gave the same 20 labels. The one difference is row 2, which has now split every check that looked at it. It stays a failure, consistent with row 19, and is marked contested. This tests the rule's clarity, not human ground truth. The [blind sheet](../03-eval-suites/fixtures/blind-label-sheet.md) is kept for a human re-label.
+- **Independent re-label (26 Oct 2026):** GPT-6, in a fresh chat with only this audit's written rule and the 20 answers shuffled and unlabelled, matched 19 of 20 labels (κ 0.88), including the row 13 reversal. A second run, prompted as a strict, sceptical human, gave the same 20 labels. The one difference is row 2, which has now split every check that looked at it. It stays a failure, consistent with row 19, and is marked contested. This tests the rule's clarity, not human ground truth. The [blind sheet](../03-eval-suites/fixtures/blind-label-sheet.md) is kept for a human re-label.
 - **Ground truth:** labels drafted by Claude and reviewed by me. Checked by the fresh GPT-6 re-label above (19 of 20, κ 0.88), and indirectly in the [calibration lab](../03-eval-suites/judge-calibration.md), where my independent labels on 12 unseen answers matched Claude's reading on 11. A blind human re-label of these 20 rows was skipped: I had reviewed them too often for it to be blind.
-- **Row 13 reversed to a pass (26 Oct 2026):** the audit first failed it for calling the litigation "ongoing". The Module 3 safety rule shows that exact sentence is the course's mandated refusal wording, so the agent followed policy. If the wording is wrong, that is a policy fix, not an agent hallucination.
-- **For later modules:** row 13's "refuse legal queries" guideline may be too broad for a market-intelligence product, since a public lawsuit is market intelligence. Rows 1 and 8 point to data freshness and retrieval gaps rather than the model.
+
+### For later modules
+
+- **Policy check:** row 13's "refuse legal queries" guideline may be too broad for a market-intelligence product, since a public lawsuit is market intelligence. Rows 1 and 8 point to data freshness and retrieval gaps rather than the model.
 
 ## Audit rows (match by query)
 

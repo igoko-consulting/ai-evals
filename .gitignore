@@ -13,3 +13,6 @@ Thumbs.db
 # Local exports / datasets you don't want public yet
 *.local.json
 *.local.csv
+
+# Python
+__pycache__/
