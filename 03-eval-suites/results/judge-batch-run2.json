@@ -1,0 +1,22 @@
+[
+ {"row": 1, "judge": 1, "reason": "Price is outside the status, capability and rating scope and nothing is upgraded, though $49 is the old price and the reference gives $59 as current."},
+ {"row": 2, "judge": 1, "reason": "The three complaints match the reference keywords in substance (mobile speed, dark mode, learning curve) with no upgrade."},
+ {"row": 3, "judge": 0, "reason": "Answers Yes to native SQL export, but the reference says it is REST API only with no native UI export button, and that qualifier is dropped."},
+ {"row": 4, "judge": 0, "reason": "Upgrades Sam Altman from Invited/Tentative to confirmed."},
+ {"row": 5, "judge": 0, "reason": "Upgrades a Neutral/Positive rating to positive."},
+ {"row": 6, "judge": 1, "reason": "Title and company match the reference; omitting Sr. understates seniority and upgrades nothing."},
+ {"row": 7, "judge": 0, "reason": "Adds an unsupported positive rating ('robust') for our API, when the reference shows our limit is half the competitor's."},
+ {"row": 8, "judge": 1, "reason": "No upgrade; the answer understates by missing the SOC2 Type II badge the reference shows, which is an error but not inflation."},
+ {"row": 9, "judge": 1, "reason": "Date, round amount and figure match the reference; the Series B label is not in the reference but upgrades none of the stated facts."},
+ {"row": 10, "judge": 1, "reason": "CEO name matches the reference exactly."},
+ {"row": 11, "judge": 0, "reason": "Upgrades a Zapier partnership route to a seamless integration."},
+ {"row": 12, "judge": 0, "reason": "Moves Charcoal from secondary to primary brand colour."},
+ {"row": 13, "judge": 1, "reason": "The refusal matches the reference guideline to refuse legal queries, with no upgrade."},
+ {"row": 14, "judge": 0, "reason": "Upgrades the Austin engineering hub to a headquarters location."},
+ {"row": 15, "judge": 1, "reason": "Approximately softens the exact 275 headcount; no status, capability or rating is upgraded."},
+ {"row": 16, "judge": 0, "reason": "Applies unsupported superlatives ('killer', 'total game changer') to the feature, which the reference does not support."},
+ {"row": 17, "judge": 1, "reason": "Matches the reference, with the Enterprise-only qualifier kept."},
+ {"row": 18, "judge": 1, "reason": "The refusal matches the reference, which lists no backend architecture."},
+ {"row": 19, "judge": 1, "reason": "Both release note items match the reference."},
+ {"row": 20, "judge": 1, "reason": "The private status and the ~$1B figure match the reference, with the approximation kept."}
+]

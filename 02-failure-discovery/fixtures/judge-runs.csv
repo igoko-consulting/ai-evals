@@ -1,21 +1,21 @@
-row,query,final_label,final_tag,course_prompt_haiku_13oct,strict_prompt_haiku_13oct,strict_prompt_sonnet_13oct,strict_prompt_gpt6_13oct_rows_2_18,guide_prompt_haiku_run1_21oct,guide_prompt_haiku_run2_21oct,guide_prompt_sonnet_run1_21oct,guide_prompt_sonnet_run2_21oct,strict_prompt_gpt6_21oct,blind_relabel_gpt6_26oct
-1,What is InsightFlow's pricing for Enterprise?,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0
-2,Summarize the top 3 complaints from DataViz's G2 reviews.,0,#HALLUCINATION,1,1,0,0,1,1,1,1,1,1
-3,Does InsightFlow support native SQL export?,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0
-4,List the confirmed speakers for SaaStr.,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0
-5,What is the sentiment of the latest TechCrunch article on us?,0,#HALLUCINATION,0,0,0,,0,1,0,0,0,0
-6,"Give me a bio for Sarah Jenkins, the new VP at DataViz.",0,#HALLUCINATION,1,0,0,,0,0,0,1,1,0
-7,Compare our API rate limits to Competitor Z.,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0
-8,Is Competitor X SOC2 compliant?,0,#ROBUSTNESS,0,0,0,,0,0,0,0,0,0
-9,When was InsightFlow's last funding round?,0,#HALLUCINATION,1,0,0,,1,1,1,1,1,0
-10,Who is the CEO of DataViz?,1,,1,1,1,,1,1,1,1,1,1
-11,Does Competitor Y integrate with HubSpot?,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0
-12,What are the primary brand colors for InsightFlow?,0,#HALLUCINATION,0,0,0,,0,0,0,0,1,0
-13,Summarize the lawsuit mentioned in the WSJ about Competitor Z.,1,,1,0,0,,1,1,1,1,1,1
-14,List the HQ locations for DataViz.,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0
-15,How many employees does InsightFlow have?,1,,1,1,1,,1,1,1,1,1,1
-16,Draft a cold email about our new feature.,0,#UX_TRUST,0,0,0,,0,0,0,0,0,0
-17,Does Competitor X offer 24/7 support?,1,,1,1,1,,1,1,1,1,1,1
-18,What database backend does DataViz use?,0,#ROBUSTNESS,1,0,1,0,1,1,1,1,1,0
-19,Summarize the latest release notes for InsightFlow.,0,#HALLUCINATION,1,0,0,,1,1,1,1,1,0
-20,What is the market cap of Competitor Z?,1,,1,1,1,,1,1,1,1,1,1
+row,query,final_label,final_tag,course_prompt_haiku_13oct,strict_prompt_haiku_13oct,strict_prompt_sonnet_13oct,strict_prompt_gpt6_13oct_rows_2_18,guide_prompt_haiku_run1_21oct,guide_prompt_haiku_run2_21oct,guide_prompt_sonnet_run1_21oct,guide_prompt_sonnet_run2_21oct,strict_prompt_gpt6_21oct,blind_relabel_gpt6_26oct,persona_relabel_chatgpt_26oct
+1,What is InsightFlow's pricing for Enterprise?,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0,0
+2,Summarize the top 3 complaints from DataViz's G2 reviews.,0,#HALLUCINATION,1,1,0,0,1,1,1,1,1,1,1
+3,Does InsightFlow support native SQL export?,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0,0
+4,List the confirmed speakers for SaaStr.,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0,0
+5,What is the sentiment of the latest TechCrunch article on us?,0,#HALLUCINATION,0,0,0,,0,1,0,0,0,0,0
+6,"Give me a bio for Sarah Jenkins, the new VP at DataViz.",0,#HALLUCINATION,1,0,0,,0,0,0,1,1,0,0
+7,Compare our API rate limits to Competitor Z.,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0,0
+8,Is Competitor X SOC2 compliant?,0,#ROBUSTNESS,0,0,0,,0,0,0,0,0,0,0
+9,When was InsightFlow's last funding round?,0,#HALLUCINATION,1,0,0,,1,1,1,1,1,0,0
+10,Who is the CEO of DataViz?,1,,1,1,1,,1,1,1,1,1,1,1
+11,Does Competitor Y integrate with HubSpot?,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0,0
+12,What are the primary brand colors for InsightFlow?,0,#HALLUCINATION,0,0,0,,0,0,0,0,1,0,0
+13,Summarize the lawsuit mentioned in the WSJ about Competitor Z.,1,,1,0,0,,1,1,1,1,1,1,1
+14,List the HQ locations for DataViz.,0,#HALLUCINATION,0,0,0,,0,0,0,0,0,0,0
+15,How many employees does InsightFlow have?,1,,1,1,1,,1,1,1,1,1,1,1
+16,Draft a cold email about our new feature.,0,#UX_TRUST,0,0,0,,0,0,0,0,0,0,0
+17,Does Competitor X offer 24/7 support?,1,,1,1,1,,1,1,1,1,1,1,1
+18,What database backend does DataViz use?,0,#ROBUSTNESS,1,0,1,0,1,1,1,1,1,0,0
+19,Summarize the latest release notes for InsightFlow.,0,#HALLUCINATION,1,0,0,,1,1,1,1,1,0,0
+20,What is the market cap of Competitor Z?,1,,1,1,1,,1,1,1,1,1,1,1

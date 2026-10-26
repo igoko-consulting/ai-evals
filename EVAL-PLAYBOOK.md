@@ -28,7 +28,7 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 
 ### 5. Check your labels are reproducible
 
-- **What happened:** GPT-6, in a fresh chat with only my written rule and the 20 answers shuffled and unlabelled, matched 19 of 20 of my audit labels (κ 0.88). The one miss, row 2, was the same row every earlier judge had split on. ([Audit log](02-failure-discovery/audit-log.md), [judge runs](02-failure-discovery/fixtures/judge-runs.csv))
+- **What happened:** GPT-6, in a fresh chat with only my written rule and the 20 answers shuffled and unlabelled, matched 19 of 20 of my audit labels (κ 0.88), and a second run prompted as a strict, sceptical human gave the same 20 labels. The one miss, row 2, was the same row every earlier judge had split on. ([Audit log](02-failure-discovery/audit-log.md), [judge runs](02-failure-discovery/fixtures/judge-runs.csv))
 - **Apply it:** shuffle the rows, strip the labels, and have a fresh labeller apply the written rule. Flag any row that splits as contested rather than forcing a verdict, and keep a person's blind labels as the real ground-truth check.
 
 ### 6. Find the root cause before swapping models
@@ -53,20 +53,20 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 - **What happened:** a broad rubric ("contradicts, or leaves out a fact that changes the meaning") flipped its call on rows 5 and 6 between runs. A judge written for one named failure gave the same 20 calls twice. ([Audit log](02-failure-discovery/audit-log.md), [eval suite](03-eval-suites/eval-suite.md))
 - **Apply it:** one named failure per judge prompt, with the pass and fail patterns spelled out.
 
-### 10. Keep the answer key out of the judge's prompt
+### 10. Keep the answer key out of the judge's prompt, but give it the policy
 
-- **What happened:** GPT-6, given my audit inside the same prompt, also failed four rows that weren't the failure being tested. The Claude judge, which never saw the audit, stayed on the check. Priming is the likely cause; it hasn't been tested directly. ([Eval suite](03-eval-suites/eval-suite.md))
-- **Apply it:** the judge sees the question, the answer and the reference, nothing else.
+- **What happened:** with my audit pasted into the prompt, GPT-6's judge failed four rows that weren't the failure being tested (2, 6, 8, 9). In a fresh chat without the audit, all four passed. Without the audit it also failed row 13, a refusal in the mandated wording, because nothing told it that wording was required. One controlled run each way, so supported rather than proven. ([With audit](03-eval-suites/results/gpt6-suite-reply.md), [without](03-eval-suites/results/gpt6-no-audit-reply.md))
+- **Apply it:** give the judge the question, the answer, the reference, and any policy that defines legitimate behaviour, such as mandated wording or refusal rules. Never give it the expected labels.
 
 ### 11. Agreeing on a score isn't agreeing on the reason
 
 - **What happened:** Claude and GPT-6 both failed the same summary, but only Claude noticed it had softened a delay; GPT-6 flagged only the added claims. Cohen's κ would count that as full agreement. ([Module 1 eval](01-evaluation-strategy/eval-harness-proof.md))
 - **Apply it:** read the judge's reasons on a sample, not just its scores.
 
-### 12. Run the judge one row at a time, and more than once
+### 12. Run the judge one row and one check per call, more than once
 
-- **What happened:** one-row-per-call runs were stable. GPT-6 failed rows 2 and 18 when judging just those two, then passed both inside a 20-row batch with a similar strict prompt, which suggests long batches make judges less careful. That's a hypothesis, not yet tested. ([Judge runs](02-failure-discovery/fixtures/judge-runs.csv))
-- **Apply it:** one call per answer, run twice, and report how many calls changed.
+- **What happened:** the same judge prompt on the same model changed 0 of 20 calls between two runs when sent one row per call, and 2 of 20 when sent as a 20-row batch. The batched runs drifted on the check's scope in both directions: one failed an added detail the check doesn't cover (row 9), the other passed a stale price as out of scope (row 1). Both still caught all six real cases. When GPT-6 ran three checks in one prompt, its judge borrowed the rule check's word lists on rows 1, 6 and 7. ([Results](03-eval-suites/results/))
+- **Apply it:** one row and one check per call, run twice, and report how many calls changed.
 
 ## Checks and suites
 
@@ -94,4 +94,4 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 
 - **Keep every run as evidence.** Saving each judge run is what made the range in rule 4 measurable after the fact.
 - **State the limits next to the result.** Each deliverable here has a method note saying what was run, by which model, and what it can't show.
-- **Label hypotheses as hypotheses.** Rules 10 and 12 are likely, not proven, and say so until tested.
+- **Label hypotheses as hypotheses, then test them.** Rules 10 and 12 started as guesses. Small controlled tests now support both, and each says how small.

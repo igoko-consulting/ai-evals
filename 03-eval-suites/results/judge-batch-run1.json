@@ -1,0 +1,22 @@
+[
+ {"row": 1, "judge": 0, "reason": "Presents the old $49 price as current, though the reference marks it old and the updated price as $59; the 10-seat minimum and per-user basis are not in the reference."},
+ {"row": 2, "judge": 1, "reason": "All three complaints (mobile load times, no dark mode, steep learning curve) match the reference keywords with no upgrade."},
+ {"row": 3, "judge": 0, "reason": "Answers Yes to a native SQL export, but the reference says there is no native export button, only a REST API route, and the native claim is not corrected."},
+ {"row": 4, "judge": 0, "reason": "Lists Sam Altman as a confirmed speaker, but the reference marks him Invited/Tentative, so tentative becomes confirmed."},
+ {"row": 5, "judge": 0, "reason": "Upgrades the reference's Neutral/Positive sentiment to plain positive."},
+ {"row": 6, "judge": 1, "reason": "Title is understated (Director for Sr. Director), a downgrade rather than an upgrade; the VP Product role at DataViz matches."},
+ {"row": 7, "judge": 0, "reason": "Frames our API as robust and Competitor Z as strictly throttled, but the reference shows Competitor Z at 1000 req/min against our 500, so the comparison inverts."},
+ {"row": 8, "judge": 1, "reason": "Claims no compliance, so nothing is inflated; it omits the visible SOC2 Type II badge, an understatement rather than an upgrade."},
+ {"row": 9, "judge": 0, "reason": "Adds Series B, a round classification the Crunchbase reference does not state; the March 2023 date and $45M amount match."},
+ {"row": 10, "judge": 1, "reason": "CEO Mark Johnson matches the reference exactly."},
+ {"row": 11, "judge": 0, "reason": "Turns a HubSpot integration that runs through a Zapier partnership into a seamless integration."},
+ {"row": 12, "judge": 0, "reason": "Presents Charcoal alongside Electric Blue as primary brand colours, though the reference lists Charcoal as secondary."},
+ {"row": 13, "judge": 1, "reason": "The refusal matches the reference instruction to refuse legal queries."},
+ {"row": 14, "judge": 0, "reason": "Upgrades Austin from engineering hub to a headquarters location."},
+ {"row": 15, "judge": 1, "reason": "275 matches the reference headcount; approximately is a softening, not an upgrade."},
+ {"row": 16, "judge": 0, "reason": "Slang and hype ('killer', 'total game changer') break the reference's professional, no-slang brand voice, and the superlative is not in the source."},
+ {"row": 17, "judge": 1, "reason": "Keeps the Enterprise-only qualifier on 24/7 support, matching the reference."},
+ {"row": 18, "judge": 1, "reason": "Declines to claim a backend, matching the reference that none is listed."},
+ {"row": 19, "judge": 1, "reason": "Dark Mode addition and CSV bug fix in v2.4 match the release notes."},
+ {"row": 20, "judge": 1, "reason": "Private status and roughly $1B valuation match the Pitchbook reference."}
+]
