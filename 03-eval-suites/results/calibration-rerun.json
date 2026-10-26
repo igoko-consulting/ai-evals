@@ -1,0 +1,62 @@
+[
+ {
+  "id": "01",
+  "label": "PASS",
+  "reason": "Both claims (10 seats on the Team plan, extra seats at $12 a month each) appear in the pricing page source, and the answer responds to the question."
+ },
+ {
+  "id": "02",
+  "label": "FAIL",
+  "reason": "The answer gives a 30-day free trial on the Pro plan, but the source says a 14-day free trial on all plans, so the duration and plan scope are not supported."
+ },
+ {
+  "id": "03",
+  "label": "FAIL",
+  "reason": "Answer adds facts absent from the source: 'biggest launch this year', 'available on every plan' (source says Enterprise tier only), AI forecasting, anomaly alerts, the $20 per user per month price, and analyst views on DataViz customers."
+ },
+ {
+  "id": "04",
+  "label": "PASS",
+  "reason": "The source states headquarters in Denver, Colorado, and the answer gives only that location."
+ },
+ {
+  "id": "05",
+  "label": "FAIL",
+  "reason": "The answer adds Pipedrive, which the source does not contain; the source lists only Salesforce and HubSpot."
+ },
+ {
+  "id": "06",
+  "label": "PASS",
+  "reason": "The answer's only claim (99.9% monthly uptime for Enterprise customers) appears in the source SLA, and it directly answers the question."
+ },
+ {
+  "id": "07",
+  "label": "FAIL",
+  "reason": "The source states the Series B was led by Accel, so the 'can't find' answer fails to respond when the source holds the answer."
+ },
+ {
+  "id": "08",
+  "label": "PASS",
+  "reason": "The source reports no layoff announcements found for Competitor X this year, and the answer reports exactly that, scoped to the sources checked."
+ },
+ {
+  "id": "09",
+  "label": "PASS",
+  "reason": "Every claim (Pro at $39 per user per month, billed annually) matches the pricing page, and the answer responds to the question."
+ },
+ {
+  "id": "10",
+  "label": "FAIL",
+  "reason": "The answer adds a quoted reviewer, a named Hubstack director, and a support complaint about week-long replies, none of which appear in the source, which says the top complaint is slow exports."
+ },
+ {
+  "id": "11",
+  "label": "PASS",
+  "reason": "The answer states only that Competitor Y is SOC 2 Type II certified, which the trust page shows, and directly answers the question."
+ },
+ {
+  "id": "12",
+  "label": "PASS",
+  "reason": "The answer 'About 140 employees' matches the source's 'about 140 employees' from LinkedIn and responds to the question."
+ }
+]

@@ -68,29 +68,34 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 - **What happened:** the same judge prompt on the same model changed 0 of 20 calls between two runs when sent one row per call, and 2 of 20 when sent as a 20-row batch. The batched runs drifted on the check's scope in both directions: one failed an added detail the check doesn't cover (row 9), the other passed a stale price as out of scope (row 1). Both still caught all six real cases. When GPT-6 ran three checks in one prompt, its judge borrowed the rule check's word lists on rows 1, 6 and 7. ([Results](03-eval-suites/results/))
 - **Apply it:** one row and one check per call, run twice, and report how many calls changed.
 
+### 13. Calibrate the judge against your own labels before you trust it
+
+- **What happened:** on 12 answers I hadn't seen, the course's judge agreed with my labels at κ 0.27, well under the 0.6 gate. It passed three answers with invented detail and failed an honest "none found". A rubric that names unsupported claims, with two examples written fresh, agreed on all 12 (κ 1.00), though that's measured on the same 12 it was written to fix. ([Judge calibration](03-eval-suites/judge-calibration.md))
+- **Apply it:** label a set yourself before seeing the judge's calls, compute κ, and read the disagreements for a pattern. Fix the rubric with examples that aren't in the test set, then re-measure, ideally on new items.
+
 ## Checks and suites
 
-### 13. Write checks for your failure; generic rules don't transfer
+### 14. Write checks for your failure; generic rules don't transfer
 
 - **What happened:** the course's generic price and legal rules caught 1 of 16 failures, and that one only because a disclaimer was missing, not because the price was stale. Checks written for inflated facts caught all 6 cases. ([Eval suite](03-eval-suites/eval-suite.md))
 - **Apply it:** derive every rule from your own failure taxonomy, then check that each catch is the real problem and not a formatting coincidence.
 
-### 14. A rule written from your audit is in-sample
+### 15. A rule written from your audit is in-sample
 
 - **What happened:** the word-pair rule caught 6 of 6 on the 20 rows its word lists came from. On 30 fresh answers written by a different model, it caught 4 of 13 and failed 5 of 17 faithful ones, because new wording slipped past it and it couldn't tell a kept qualifier from a dropped one. Part of its 6 of 6 came from words in the questions, not the answers. ([Eval suite](03-eval-suites/eval-suite.md), [test set](03-eval-suites/fixtures/reworded-test-set.csv))
 - **Apply it:** before a rule can block a release, test it on fresh cases written by someone, or something, that never saw the rule. Include faithful answers that keep the qualifier, so false alarms show up.
 
-### 15. Count in code, never in the model
+### 16. Count in code, never in the model
 
 - **What happened:** GPT-6's row-by-row calls were sound, but its own summary table contradicted them on every line. ([GPT-6 reply](03-eval-suites/results/gpt6-suite-reply.md))
 - **Apply it:** models make the row-level calls; code computes catches, misses and false alarms.
 
-### 16. Code for rigid rules, the judge for meaning
+### 17. Code for rigid rules, the judge for meaning
 
 - **What happened:** a word-list rule for inflated facts matched the judge in-sample, then failed out of sample, while the judge caught 13 of 13 fresh cases. The safety rule written as code misread "No native connector" as keeping the limit. Inflation is a question of meaning, and code can't read meaning. ([Eval suite](03-eval-suites/eval-suite.md))
 - **Apply it:** build the pyramid by the kind of check, not by cost alone. Code checks the rigid things (format, required wording, numbers against a source of truth), the judge decides meaning, and humans calibrate the judge. A cheap rule that can't read meaning is an early warning, never a gate.
 
-### 17. Score the path when the product is an agent
+### 18. Score the path when the product is an agent
 
 - **What happened:** Ascend IQ's Stripe and Adyen comparison read well, but the path failed 4 of 6 dimensions: a misspelt lookup, then a barred web search whose blog post was cited to the client. An output-only eval would have passed it. ([Trajectory scorecard](03-eval-suites/trajectory.md))
 - **Apply it:** log every tool call, define a reference path, and score path and outcome together. Enforce sanctioned tools and verified sources with subset matching in code, and treat a plausible answer on a failed path as a failure.
