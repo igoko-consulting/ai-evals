@@ -29,11 +29,13 @@
 
 ## Where the failure was caught
 
-The Win. The rule check caught all 6 real cases with no false alarms, including my P0 row 11, and the judge also caught 6 of 6. The safety rule caught the 2 capability questions it covers (rows 3 and 11), plus the false refusal in row 8. Each catch is the real problem, a dropped qualifier or an upgraded status, not a formatting issue. The caveat: I wrote the rule's word lists from these same 20 rows, so its 6 of 6 is in-sample. New wording such as "fully integrated" would get past it, which is why the judge stays.
+On the 20 audit answers, the Win: the rule check caught all 6 real cases with no false alarms, including my P0 row 11, and the judge also caught 6 of 6. The safety rule caught the 2 capability questions it covers (rows 3 and 11), plus the false refusal in row 8.
+
+On 30 fresh answers that GPT-6 wrote, the Insight. The rule caught 4 of 13 inflated answers and failed 5 of 17 faithful ones; the safety rule, as code, caught none. The judge caught 13 of 13 with 1 false alarm in 17. I wrote the rule's word lists from the audit rows, so its 6 of 6 was in-sample: new wording slips past it, and it can't tell whether an answer kept a qualifier or read a negation. The risk is about meaning, which a word list can't see, so the judge earns its cost.
 
 ## What I'd ship next
 
-Put the rule check in front of every answer as a release gate, with the judge running on whatever the rule passes, and test the rule's word lists on a fresh set of reworded upgrades before it is allowed to block a release. The rule costs nothing per answer and caught every real case here, so it takes most of the load off the judge. The fresh test is what turns an in-sample 6 of 6 into a number I'd stake a launch on.
+Make the judge the release gate, one row per call, and turn the rule into a free early warning that never blocks on its own. Rebuild the rule to check whether the answer keeps the source's qualifier, not just whether certain words appear, and promote it only once it holds on fresh cases. On the fresh set, the word-list rule would have blocked 5 good answers in 17 and passed 9 bad ones in 13; the judge caught all 13.
 
 ## How this was run
 
@@ -43,7 +45,15 @@ Put the rule check in front of every answer as a release gate, with the judge ru
 - **Cross-check:** GPT-6 ran the lab tool's prompt, with the audit pasted in ([reply](results/gpt6-suite-reply.md)). Its row-level calls matched the code exactly on the rule check and safety rule, and its judge also caught all six real cases. Its judge also failed rows 2, 6, 8 and 9, which aren't inflated facts. Its own summary table contradicted its row-level calls on every line, with wrong denominators and audit failures counted as false alarms, so every count here comes from code.
 - **Priming test:** the same prompt in a fresh GPT-6 chat without the audit ([reply](results/gpt6-no-audit-reply.md)). Rows 2, 6, 8 and 9 all passed, so the extra failures came from the audit in the prompt. The rule check and safety rule gave identical results, and the judge still caught 6 of 6. It made one false alarm: row 13, a refusal in the mandated wording, which nothing in the prompt told it was required.
 - **Batching test:** the same Claude judge sent all 20 rows in one call, twice ([run 1](results/judge-batch-run1.json), [run 2](results/judge-batch-run2.json)). Both caught 6 of 6, but 2 of 20 calls changed between them (rows 1 and 9), against 0 of 20 for one row per call.
-- **Limit:** the rule's word lists come from these 20 rows. Its score on fresh answers is unknown until Module 5.
+- **Fresh test:** GPT-6, in a fresh chat with no sight of the checks, wrote 30 new rows across all five forms of inflation: 13 inflated and 17 faithful, including faithful answers that keep a qualifier or correctly use a strong word ([test set](fixtures/reworded-test-set.csv), [judge verdicts](results/reworded-judge.json)). The checks ran unchanged; re-run with `python3 ascend_suite.py reworded`.
+
+  | Check | Inflated caught | Missed (rows) | False alarms on faithful rows |
+  |---|---|---|---|
+  | Rule check | 4 of 13 | 3, 5, 7, 10, 15, 17, 19, 24, 26 | 5 of 17: 6, 13, 14, 22, 27 |
+  | Safety rule | 0 of 13 | all 13 | 0 of 17 |
+  | Judge | 13 of 13 | none | 1 of 17: 9 |
+
+  The judge's one false alarm, row 9, failed an answer for dropping "Standard" from "Standard Enterprise plan starts at €1,200"; "starts at" already marks it as the floor, so I count it as a false alarm. The safety rule's code misread a negation: it found "native" in "No native connector" and treated the limit as kept.
 
 ## Row by row
 

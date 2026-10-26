@@ -78,11 +78,11 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
 
 ## Discussion questions
 
-- **An engineering lead wants Layer 1 only for launch. What evidence shows the blind spot?** The course's generic Layer 1 rules caught 1 of 16 audit failures, and that by coincidence. My own rule for inflated facts caught 6 of 6, but on the same rows its word lists came from, so new wording would get past it. Layer 1 alone is only as good as its word list; the judge stays until the rule survives fresh wording.
+- **An engineering lead wants Layer 1 only for launch. What evidence shows the blind spot?** The course's generic Layer 1 rules caught 1 of 16 audit failures, and that by coincidence. My own rule for inflated facts caught 6 of 6 on the rows its word lists came from, then 4 of 13 on fresh answers, with 5 false alarms in 17. Layer 1 alone would ship most inflated facts and block good answers; the judge caught 13 of 13.
 - **Which audience was hardest to write the spec for?** _After Lab 2._
 
 ## What this means for Ascend IQ
 
-- **The P0 is catchable before launch:** a free rule and a judge each caught all 6 inflated-fact answers, with no false alarms.
+- **The P0 is catchable before launch, by the judge:** it caught 6 of 6 in the audit and 13 of 13 on fresh answers. The free word rule matched it in-sample and fell to 4 of 13 out of sample.
 - **A narrow check is a stable check:** the judge gave the same 20 calls on two runs, where Module 2's broad rubric flipped on two rows.
 - **Counts belong in code:** GPT-6's row-level calls were sound, but its own summary was wrong on every line.

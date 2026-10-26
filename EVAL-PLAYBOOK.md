@@ -77,18 +77,18 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 
 ### 14. A rule written from your audit is in-sample
 
-- **What happened:** the word-pair rule caught 6 of 6 on the same 20 rows its word lists came from. New wording such as "fully integrated" would get past it. ([Eval suite](03-eval-suites/eval-suite.md))
-- **Apply it:** test every rule on fresh, reworded cases before it's allowed to block a release.
+- **What happened:** the word-pair rule caught 6 of 6 on the 20 rows its word lists came from. On 30 fresh answers written by a different model, it caught 4 of 13 and failed 5 of 17 faithful ones, because new wording slipped past it and it couldn't tell a kept qualifier from a dropped one. Part of its 6 of 6 came from words in the questions, not the answers. ([Eval suite](03-eval-suites/eval-suite.md), [test set](03-eval-suites/fixtures/reworded-test-set.csv))
+- **Apply it:** before a rule can block a release, test it on fresh cases written by someone, or something, that never saw the rule. Include faithful answers that keep the qualifier, so false alarms show up.
 
 ### 15. Count in code, never in the model
 
 - **What happened:** GPT-6's row-by-row calls were sound, but its own summary table contradicted them on every line. ([GPT-6 reply](03-eval-suites/results/gpt6-suite-reply.md))
 - **Apply it:** models make the row-level calls; code computes catches, misses and false alarms.
 
-### 16. Cheap checks first, the judge as backstop
+### 16. Code for rigid rules, the judge for meaning
 
-- **What happened:** the word-pair rule matched the judge on all 6 real cases at no cost per answer. ([Eval suite](03-eval-suites/eval-suite.md))
-- **Apply it:** build the pyramid. Code checks run on every answer, the judge runs on what the code passes, and humans calibrate the judge.
+- **What happened:** a word-list rule for inflated facts matched the judge in-sample, then failed out of sample, while the judge caught 13 of 13 fresh cases. The safety rule written as code misread "No native connector" as keeping the limit. Inflation is a question of meaning, and code can't read meaning. ([Eval suite](03-eval-suites/eval-suite.md))
+- **Apply it:** build the pyramid by the kind of check, not by cost alone. Code checks the rigid things (format, required wording, numbers against a source of truth), the judge decides meaning, and humans calibrate the judge. A cheap rule that can't read meaning is an early warning, never a gate.
 
 ## Working habits
 

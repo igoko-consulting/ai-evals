@@ -4,11 +4,13 @@ Scores follow the course convention: 1 = pass, 0 = fail. The rule check and safe
 run here as code. The judge needs a model, so its verdicts are read from
 results/judge-run*.json (one JSON object per row: row, judge, reason).
 
-Usage: python3 ascend_suite.py
+Usage: python3 ascend_suite.py           the 20 audited answers
+       python3 ascend_suite.py reworded  the fresh test set GPT-6 wrote, to test the checks out of sample
 """
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -101,5 +103,25 @@ def main():
         print(f"\nJudge calls that changed between runs: {len(changed)} of {len(judge)} {changed or ''}")
 
 
+def reworded():
+    rows = list(csv.DictReader((HERE / "fixtures" / "reworded-test-set.csv").open()))
+    judge = load_judge(RESULTS / "reworded-judge.json")
+    inflated = [int(r["id"]) for r in rows if r["label"] == "INFLATED"]
+    faithful = [int(r["id"]) for r in rows if r["label"] == "FAITHFUL"]
+    scores = {
+        "Rule check": {int(r["id"]): rule_check(r["question"], r["answer"], r["source"])[0] for r in rows},
+        "Safety rule": {int(r["id"]): safety_rule(r["question"], r["answer"], r["source"])[0] for r in rows},
+        "Judge": {n: v["judge"] for n, v in judge.items()},
+    }
+    fmt = lambda rows: ", ".join(map(str, rows)) or "none"
+    print("| Check | Inflated caught | Missed (rows) | False alarms on faithful rows |")
+    print("|---|---|---|---|")
+    for name, s in scores.items():
+        caught = [n for n in inflated if s[n] == 0]
+        missed = [n for n in inflated if s[n] == 1]
+        alarms = [n for n in faithful if s[n] == 0]
+        print(f"| {name} | {len(caught)} of {len(inflated)} | {fmt(missed)} | {len(alarms)} of {len(faithful)}: {fmt(alarms)} |")
+
+
 if __name__ == "__main__":
-    main()
+    reworded() if sys.argv[1:] == ["reworded"] else main()

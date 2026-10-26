@@ -39,7 +39,7 @@ Ascend IQ, an AI agent that answers plain-language market-intelligence questions
 | **15 of 20 audited answers fail** a strict source rule; 12 of them are hallucinations. | [Audit log](02-failure-discovery/audit-log.md) |
 | **8 answers fail under every judge and rubric tried**, Claude and GPT-6, strict and lenient. Even the most lenient judge fails 9 of 20, so the failure rate doesn't depend on how strict the rule is. | [Judge runs](02-failure-discovery/fixtures/judge-runs.csv) |
 | **Two P0 risks:** inflated facts (6 answers) and wrong numbers on the core use case (2). **One P1:** false refusals (2). | [Failure taxonomy](02-failure-discovery/failure-taxonomy.md) |
-| **The top risk can be caught before launch.** A word-pair rule and a judge each caught all 6 inflated-fact answers with no false alarms, and the judge gave the same 20 calls on two runs. The rule is untested on new wording. | [Eval suite](03-eval-suites/eval-suite.md) |
+| **The top risk can be caught before launch, by a judge, not a word list.** On 30 fresh answers, the judge caught 13 of 13 inflated facts with 1 false alarm in 17, and gave the same 20 calls on two runs of the audit. A word-pair rule that caught 6 of 6 in-sample caught 4 of 13 fresh. | [Eval suite](03-eval-suites/eval-suite.md) |
 | **Two failures point to retrieval, not the model:** a stale cached price (row 1) and a missed page footer (row 8). | [Audit log](02-failure-discovery/audit-log.md) |
 
 The lessons behind these, written to reuse on other projects, are in [EVAL-PLAYBOOK.md](EVAL-PLAYBOOK.md).
