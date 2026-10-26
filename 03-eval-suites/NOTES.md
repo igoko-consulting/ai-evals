@@ -97,7 +97,7 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
 ## Discussion questions
 
 - **An engineering lead wants Layer 1 only for launch. What evidence shows the blind spot?** The course's generic Layer 1 rules caught 1 of 16 audit failures, and that by coincidence. My own rule for inflated facts caught 6 of 6 on the rows its word lists came from, then 4 of 13 on fresh answers, with 5 false alarms in 17. Layer 1 alone would ship most inflated facts and block good answers; the judge caught 13 of 13.
-- **Which audience was hardest to write the spec for?** _After Lab 2._
+- **Which audience was hardest to write the spec for?** Engineering. The risk is about meaning, and a rule can't check meaning. "Drops a qualifier that changes what the reader would do" needs a judge. My own word rule showed this: it scored 6 of 6, then fell to 4 of 13 on fresh answers.
 
 ## What this means for Ascend IQ
 
