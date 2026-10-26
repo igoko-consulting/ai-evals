@@ -90,6 +90,11 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 - **What happened:** a word-list rule for inflated facts matched the judge in-sample, then failed out of sample, while the judge caught 13 of 13 fresh cases. The safety rule written as code misread "No native connector" as keeping the limit. Inflation is a question of meaning, and code can't read meaning. ([Eval suite](03-eval-suites/eval-suite.md))
 - **Apply it:** build the pyramid by the kind of check, not by cost alone. Code checks the rigid things (format, required wording, numbers against a source of truth), the judge decides meaning, and humans calibrate the judge. A cheap rule that can't read meaning is an early warning, never a gate.
 
+### 17. Score the path when the product is an agent
+
+- **What happened:** Ascend IQ's Stripe and Adyen comparison read well, but the path failed 4 of 6 dimensions: a misspelt lookup, then a barred web search whose blog post was cited to the client. An output-only eval would have passed it. ([Trajectory scorecard](03-eval-suites/trajectory.md))
+- **Apply it:** log every tool call, define a reference path, and score path and outcome together. Enforce sanctioned tools and verified sources with subset matching in code, and treat a plausible answer on a failed path as a failure.
+
 ## Working habits
 
 - **Keep every run as evidence.** Saving each judge run is what made the range in rule 4 measurable after the fact.

@@ -17,7 +17,7 @@ This is a **template repo**. Click **Use this template → Create a new reposito
 | M2 | **Failure audit log** | ✅ | `02-failure-discovery/audit-log.md` |
 | M2 | **Failure Taxonomy** | ✅ | `02-failure-discovery/failure-taxonomy.md` |
 | M3 | **Runnable eval suite** (results) | ✅ | `03-eval-suites/eval-suite.md` |
-| M3 | **Trajectory eval** (scorecard) | ☐ | `03-eval-suites/lab-1b-trajectory.md` |
+| M3 | **Trajectory eval** (scorecard) | ✅ | `03-eval-suites/trajectory.md` |
 | M3 | **Judge calibration** (κ) | ☐ | `03-eval-suites/lab-judge-calibration.md` |
 | M3 | **Eval Spec** (5-part spec + audience messages) | ✅ | `03-eval-suites/eval-spec.md` |
 | M4 | **Eval gate map** (severity × placement) | ☐ | `04-eval-gates/lab-1-gate-map.md` |
@@ -94,7 +94,7 @@ ai-evals/
 │   └── failure-taxonomy.md           prioritized failure modes
 ├── 03-eval-suites/                   ← Module 3
 │   ├── eval-suite.md                 runnable 3-layer suite results
-│   ├── lab-1b-trajectory.md          trajectory scorecard
+│   ├── trajectory.md                 trajectory scorecard
 │   ├── lab-judge-calibration.md      judge calibration (κ)
 │   └── eval-spec.md                  5-part eval spec + audience messages
 ├── 04-eval-gates/                    ← Module 4

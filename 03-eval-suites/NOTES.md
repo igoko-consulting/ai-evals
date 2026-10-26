@@ -91,7 +91,8 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
 
 - **Lab 1, output suite:** three checks for inflated facts, run on all 20 answers. Output: [eval-suite.md](eval-suite.md).
 - **Lab 2, eval spec:** the five parts and three messages. Output: [eval-spec.md](eval-spec.md).
-- **Trajectory and calibration labs:** the support-agent trace and the κ loop. Outputs: `trajectory.md`, `judge-calibration.md`.
+- **Trajectory lab:** score the path Ascend IQ took to compare Stripe and Adyen pricing. Output: [trajectory.md](trajectory.md).
+- **Calibration lab:** label 12 answers yourself and compare with the judge. Output: `judge-calibration.md`.
 
 ## Discussion questions
 
@@ -102,4 +103,5 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
 
 - **The P0 is catchable before launch, by the judge:** it caught 6 of 6 in the audit and 13 of 13 on fresh answers. The free word rule matched it in-sample and fell to 4 of 13 out of sample.
 - **A narrow check is a stable check:** the judge gave the same 20 calls on two runs, where Module 2's broad rubric flipped on two rows.
+- **A fluent answer can hide a broken path:** the Stripe and Adyen comparison read well, but the path failed 4 of 6 dimensions, including a barred web source cited to the client.
 - **Counts belong in code:** GPT-6's row-level calls were sound, but its own summary was wrong on every line.
