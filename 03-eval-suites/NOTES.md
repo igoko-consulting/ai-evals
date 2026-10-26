@@ -38,7 +38,11 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
 | Superset | At least every required tool | Guarding against doing the minimum |
 
 - **The mode is a risk call:** strict matching on a creative task creates noise; loose matching on a regulated flow creates blind spots.
-- Missed: trajectory evals need the tool calls logged. My Module 2 audit had no traces, so the path could only be inferred there.
+- **Logging comes first:** a path you didn't record can't be scored. My Module 2 audit had no traces, so every agentic failure there was a guess.
+- **Score path and outcome together:** a perfect path that ends in a wrong answer still fails. Each catches what the other can't.
+- **Long transcripts make judges less consistent:** score one dimension per call, as my batching test suggests.
+- **Reference paths go stale:** when tools change, the golden path needs updating, or the eval starts failing good runs.
+- **The methods:** deterministic match against a reference path, a judge reading the transcript against a rubric, and tooling such as LangSmith, Arize or DeepEval to log and score traces in CI.
 
 ## Building the suite
 
@@ -56,6 +60,19 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
   - A cost-saving AI judge at 99% TNR and 80% TPR: likely hold, because an 80% ruler invalidates everything measured with it.
 - **Biases to design against:** self-preference (use a different model family), position and verbosity bias.
 - Missed: κ measures agreement on scores, not on reasons. Two judges can agree for different reasons, as in my Module 1 eval.
+
+## Class discussion: what helps beyond golden sets and human judgement
+
+| Addition | Why it helps | Evidence from my repo |
+|---|---|---|
+| Trajectory evals | Show whether a right answer came from a sound path, and where a failure began | Rows 1 and 8 look like retrieval failures, which an output-only audit can't prove |
+| Testing the evaluator | κ against humans, run-to-run stability and cross-family agreement; a golden set is only as good as the judge scoring against it | One row per call changed 0 of 20 calls, batched changed 2 of 20; the audit in the prompt flipped 4 rows |
+| Fresh and adversarial cases | Rules written from your own audit flatter themselves | The word rule caught 6 of 6 in-sample and 4 of 13 on fresh answers |
+| Checks against a source of truth | Exact, cheap checks for rigid facts: prices against the pricing system, mandated wording against policy | Row 13's "ongoing" was policy, not a hallucination |
+| Operational metrics | Latency, cost per task and step count, which a text audit can't see | My Module 1 latency metric was untestable from the logs |
+| Real-user signals | Thumbs down, repeat questions and escalations catch what the evals didn't imagine | Not yet measured; Module 5's online loop |
+
+- **The point I'd make: a trajectory eval assigns fault.** For inflated facts, check whether the retrieved document held the qualifier. If it did ("via Zapier partnership") and the answer dropped it, the failure is in generation: fix the prompt or gate with the judge. If it didn't, the failure is in retrieval: fix the index or its freshness, and a model swap won't help. That turns "hallucination" from a symptom into a diagnosis.
 
 ## The eval spec
 
