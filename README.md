@@ -16,7 +16,7 @@ This is a **template repo**. Click **Use this template → Create a new reposito
 | M1 | **Eval harness proof** (links + screenshots) | ✅ | `01-evaluation-strategy/eval-harness-proof.md` |
 | M2 | **Failure audit log** | ✅ | `02-failure-discovery/audit-log.md` |
 | M2 | **Failure Taxonomy** | ✅ | `02-failure-discovery/failure-taxonomy.md` |
-| M3 | **Runnable eval suite** (results) | ☐ | `03-eval-suites/lab-1-eval-suite.md` |
+| M3 | **Runnable eval suite** (results) | ✅ | `03-eval-suites/eval-suite.md` |
 | M3 | **Trajectory eval** (scorecard) | ☐ | `03-eval-suites/lab-1b-trajectory.md` |
 | M3 | **Judge calibration** (κ) | ☐ | `03-eval-suites/lab-judge-calibration.md` |
 | M3 | **Eval Spec** (5-part spec + audience messages) | ☐ | `03-eval-suites/lab-2-eval-spec.md` |
@@ -81,7 +81,7 @@ ai-evals/
 │   ├── audit-log.md                  scored audit of real outputs
 │   └── failure-taxonomy.md           prioritized failure modes
 ├── 03-eval-suites/                   ← Module 3
-│   ├── lab-1-eval-suite.md           runnable 3-layer suite results
+│   ├── eval-suite.md                 runnable 3-layer suite results
 │   ├── lab-1b-trajectory.md          trajectory scorecard
 │   ├── lab-judge-calibration.md      judge calibration (κ)
 │   └── lab-2-eval-spec.md            5-part eval spec + audience messages

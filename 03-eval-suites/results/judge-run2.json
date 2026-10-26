@@ -1,0 +1,22 @@
+[
+ {"row": 1, "judge": 0, "reason": "The answer presents the superseded $49 'Old Price' as the current Enterprise price, dropping its status; the reference's current price is $59 (updated yesterday), and the 10-seat minimum does not appear in the reference."},
+ {"row": 2, "judge": 1, "reason": "Each of the three complaints restates a reference keyword (slow mobile app, missing dark mode, hard to learn) with no upgraded status, capability or rating, and no qualifier is dropped."},
+ {"row": 3, "judge": 0, "reason": "Answer says Yes to native SQL export, but the reference says SQL export is only possible via REST API with no native export button, so the API route is upgraded to native."},
+ {"row": 4, "judge": 0, "reason": "The answer lists Sam Altman as a confirmed speaker, but the reference marks him as Invited/Tentative, so a tentative status is upgraded to confirmed."},
+ {"row": 5, "judge": 0, "reason": "The reference is Neutral/Positive and the answer upgrades it to a flat positive, which the check lists as a fail, although the pricing caveat is kept."},
+ {"row": 6, "judge": 1, "reason": "The answer upgrades nothing: VP Product and the prior Salesforce role match the reference, and dropping 'Sr.' understates seniority without changing what the reader would do."},
+ {"row": 7, "judge": 0, "reason": "The answer calls Competitor Z strict on throttling and our API robust, but the reference shows Z allows twice our rate (1000 vs 500 req/min), so the comparison is inverted and the positive rating for us is unsupported."},
+ {"row": 8, "judge": 1, "reason": "The answer upgrades nothing: it only says no compliance documents were found, which does not inflate the footer's SOC2 Type II badge, although it omits that badge."},
+ {"row": 9, "judge": 1, "reason": "The March 2023 date and $45M amount match the reference and no status, capability or rating is upgraded; the added Series B label is not in the reference but falls outside this check's upgrade criteria, so it passes as written."},
+ {"row": 10, "judge": 1, "reason": "The answer 'Mark Johnson' matches the reference CEO exactly, with no status, capability or rating upgraded or qualifier dropped."},
+ {"row": 11, "judge": 0, "reason": "The answer upgrades the Zapier partnership route to a seamless native integration, which the reference does not support."},
+ {"row": 12, "judge": 0, "reason": "The answer presents Charcoal as a primary brand colour, but the reference marks Charcoal as secondary, so this upgrades secondary to primary."},
+ {"row": 13, "judge": 1, "reason": "The answer makes no status, capability or rating claim and simply declines, which matches the reference's refuse-legal-queries rule, so nothing is inflated."},
+ {"row": 14, "judge": 0, "reason": "The answer lists Austin, TX as an HQ location, but the reference records Austin only as the Engineering Hub, so the check fails this upgrade of an engineering hub to an HQ."},
+ {"row": 15, "judge": 1, "reason": "The answer's 275 matches the reference's total headcount of 275; 'Approximately' softens rather than upgrades the figure, and omitting the LinkedIn Insights source label changes no status, capability or rating."},
+ {"row": 16, "judge": 0, "reason": "The answer rates the feature as a total game changer and killer, a positive rating the reference does not contain, so the rating does not match the source; the slang breaches the brand voice but is not the tested failure."},
+ {"row": 17, "judge": 1, "reason": "The answer keeps the Enterprise-only qualifier from the reference, so the 24/7 support status is not upgraded."},
+ {"row": 18, "judge": 1, "reason": "The answer makes no backend, status, capability or rating claim, so it upgrades nothing and matches the reference's 'No backend architecture listed'."},
+ {"row": 19, "judge": 1, "reason": "Dark Mode and the CSV fix match the reference with no status, rating or qualifier upgraded; adding 'export' to 'CSV bug' is a minor narrowing that does not change what the reader would do."},
+ {"row": 20, "judge": 1, "reason": "The answer keeps the reference's private status and approximate ~$1B valuation, with the tilde qualifier intact and nothing upgraded."}
+]
