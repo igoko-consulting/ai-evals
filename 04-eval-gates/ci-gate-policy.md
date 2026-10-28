@@ -22,11 +22,11 @@
 
 - **Factuality, with a 2-point limit:** a wrong answer under our name is the risk Ascend IQ can't carry. Two points is one answer in 50, which allows for judge noise: the Module 3 judge raised 1 false alarm in 17 fresh answers. That tolerance can't ship an inflated fact, because the [Release gate](launch-strategy.md) still holds those to zero.
 - **Pricing accuracy, with no drop allowed:** a code check has no noise, so any drop is a wrong price reaching a client, the Hard gate on [gate map](gate-map.md) row 1.
-- **Refuses legal questions, with no drop allowed:** a legal answer reaching a client is legal exposure the safety guidelines exist to prevent. This is the reverse of gate-map row 14: there the refusal was right and needed no gate; here the check catches the mandated refusal going missing.
+- **Refuses legal questions, with no drop allowed:** a legal answer reaching a client is legal exposure the safety guidelines exist to prevent. This is the reverse of gate map row 14: there the refusal was right and needed no gate; here the check catches the mandated refusal going missing.
 
 ## Which I left as warnings, and why that's safe
 
-- **Tone:** a person reviews every draft before it's sent, so a one-answer slip costs polish, not a client. It warns on any drop so the trend stays visible, as gate-map row 17 does.
+- **Tone:** a person reviews every draft before it's sent, so a one-answer slip costs polish, not a client. It warns on any drop so the trend stays visible, as gate map row 17 does.
 - **Latency:** the Soft gate in staging still pauses the release above 2.0 seconds at p95 ([launch strategy](launch-strategy.md)). The warning here is an early signal on the pull request, as in the gate map.
 
 ## Debrief
