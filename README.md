@@ -18,9 +18,9 @@
 | M3 | **Trajectory eval** (scorecard) | ✅ | `03-eval-suites/trajectory.md` |
 | M3 | **Judge calibration** (κ) | ✅ | `03-eval-suites/judge-calibration.md` |
 | M3 | **Eval Spec** (5-part spec + audience messages) | ✅ | `03-eval-suites/eval-spec.md` |
-| M4 | **Eval gate map** (severity × placement) | ☐ | `04-eval-gates/gate-map.md` |
+| M4 | **Eval gate map** (severity × placement) | ✅ | `04-eval-gates/gate-map.md` |
 | M4 | **CI gate policy** (PR #218 replay) | ☐ | `04-eval-gates/ci-gate-policy.md` |
-| M4 | **Launch strategy** (release criteria + CI policy + mitigation) | ☐ | `04-eval-gates/launch-strategy.md` |
+| M4 | **Launch strategy** (release criteria + CI policy + mitigation) | ✅ | `04-eval-gates/launch-strategy.md` |
 | M5 | **Coverage matrix** | ☐ | `05-scale/coverage-matrix.md` |
 | M5 | **Eval budget** | ☐ | `05-scale/budget.md` |
 | M6 | **Ship / Hold memo** | ☐ | `06-culture/ship-hold-memo.md` |
