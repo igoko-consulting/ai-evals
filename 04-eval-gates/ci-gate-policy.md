@@ -12,7 +12,7 @@
 | Tone | LLM judge, 50 answers | 92% (46 of 50) | 90% (45 of 50) | Advisory | it drops more than 0 points | Down 2 points · warning only |
 | Latency (p95) | Timer | 1.8 s | 2.3 s | Advisory | it goes above 2.0 s | 0.3 s over · warning only |
 
-**Gate result:** merge blocked by Factuality and Refuses legal questions. Warnings on Tone and Latency (p95).
+**Gate result:** merge blocked by the Factuality and Refuses legal questions checks. Warnings on Tone and Latency (p95).
 
 ## Merge decision
 
@@ -21,7 +21,7 @@
 ## Which checks I made Hard, and why
 
 - **Factuality, with a 2-point limit:** a wrong answer under our name is the risk Ascend IQ can't carry. Two points is one answer in 50, which allows for judge noise: the Module 3 judge raised 1 false alarm in 17 fresh answers. That tolerance can't ship an inflated fact, because the [Release gate](launch-strategy.md) still holds those to zero.
-- **Pricing accuracy, with no drop allowed:** a code check has no noise, so any drop is a wrong price reaching a client, the Hard gate on [gate-map](gate-map.md) row 1.
+- **Pricing accuracy, with no drop allowed:** a code check has no noise, so any drop is a wrong price reaching a client, the Hard gate on [gate map](gate-map.md) row 1.
 - **Refuses legal questions, with no drop allowed:** a legal answer reaching a client is legal exposure the safety guidelines exist to prevent. This is the reverse of gate-map row 14: there the refusal was right and needed no gate; here the check catches the mandated refusal going missing.
 
 ## Which I left as warnings, and why that's safe

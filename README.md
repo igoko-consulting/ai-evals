@@ -2,7 +2,7 @@
 
 > My final project for Product School's **AI Evals** certification. One evaluation system for a real LLM feature, from strategy, through failure discovery and an automated eval suite, to the gates and governance that let it ship safely.
 
-**How to read this repo:** start with the findings below, then the deliverables. Each module folder holds its deliverables, a `NOTES.md` with the module's ideas and my takeaways, and its evidence: inputs under `fixtures/`, judge runs under `results/`. [EVAL-PLAYBOOK.md](EVAL-PLAYBOOK.md) collects the lessons to reuse on other projects. The course runbooks (`LAB.md` in each folder, and `PROMPTS.md`) are kept as shipped.
+**How to read this repo:** start with the findings below, then the deliverables. Each module folder holds its deliverables, a `NOTES.md` with the module's ideas and my takeaways, and its evidence: inputs under `fixtures/`, judge runs under `results/`. [EVAL-PLAYBOOK.md](EVAL-PLAYBOOK.md) collects the lessons to reuse on other projects. The course runbooks (`LAB.md` in each folder, and `PROMPTS.md`) are kept as shipped, so some file names in them predate the renames.
 
 ---
 

@@ -13,7 +13,7 @@
 
 ## After the pushback
 
-No call changed. GPT-6, playing a sceptical engineering lead, questioned the placement on five rows. Its points tightened three of my reasons, and rows 5, 8 and 3 now warn earlier.
+No call changed. GPT-6, playing a sceptical engineering lead, questioned where four gates run and whether the refusal policy is too broad. Its points sharpened my reasons on rows 1, 5, 8 and 3, and added earlier warnings on rows 5, 8 and 3.
 
 - **Row 1:** CI replays saved data, so the PR check matches a saved copy of the pricing page, not the live one. The stale cache behind this answer needs a freshness check in production, which belongs in Module 5.
 - **Row 5:** the judge runs on every staging build, so the release gate isn't the first place we find out. The statistics behind the zero-failure bar are in the [eval spec](../03-eval-suites/eval-spec.md): zero in 100 keeps the true rate under about 3%.
