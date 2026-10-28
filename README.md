@@ -42,6 +42,7 @@ Ascend IQ, an AI agent that answers plain-language market-intelligence questions
 | **An uncalibrated judge is noise.** The course's judge agreed with my labels at κ 0.27, passing answers with invented detail; a rubric that names unsupported claims reached 12 of 12. | [Judge calibration](03-eval-suites/judge-calibration.md) |
 | **A fluent answer can hide a failed path.** Ascend IQ's Stripe and Adyen comparison read well, but its path failed 4 of 6 dimensions, ending with a barred web source cited to the client. | [Trajectory](03-eval-suites/trajectory.md) |
 | **Today's build fails the ship bar.** The eval spec allows zero confirmed inflated answers; the audit found 6 of 20 (30%). | [Eval spec](03-eval-suites/eval-spec.md) |
+| **No rollout plan ships around a failed Hard gate.** Three Hard gates guard the release, each behind an exact or calibrated check. The staged rollout covers only the Soft latency gate, and the inflated-facts gate already fails. | [Launch strategy](04-eval-gates/launch-strategy.md) |
 
 The lessons behind these, written to reuse on other projects, are in [EVAL-PLAYBOOK.md](EVAL-PLAYBOOK.md).
 
@@ -75,7 +76,8 @@ ai-evals/
 ├── 04-eval-gates/                    ← Module 4
 │   ├── gate-map.md                   severity × pipeline-placement grid
 │   ├── ci-gate-policy.md             CI gate policy and merge call
-│   └── launch-strategy.md            release criteria + CI policy + mitigation
+│   ├── launch-strategy.md            release criteria + CI policy + mitigation
+│   └── NOTES.md
 ├── 05-scale/                         ← Module 5
 │   ├── coverage-matrix.md            coverage across product lines
 │   └── budget.md                     eval budget + trade-offs

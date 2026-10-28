@@ -100,6 +100,13 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 - **What happened:** Ascend IQ's Stripe and Adyen comparison read well, but the path failed 4 of 6 dimensions: a misspelt lookup, then a barred web search whose blog post was cited to the client. An output-only eval would have passed it. ([Trajectory scorecard](03-eval-suites/trajectory.md))
 - **Apply it:** log every tool call, define a reference path, and score path and outcome together. Enforce sanctioned tools and verified sources with subset matching in code, and treat a plausible answer on a failed path as a failure.
 
+## Gates
+
+### 19. Gate each check separately; a blend hides small, severe regressions
+
+- **What happened:** in the CI practice, a prompt rewrite made Ascend IQ answer 1 of 10 legal questions it should refuse, and got 4 more of 50 answers wrong. Blended across the 130 cases, the score fell from 95.4% to 90.8%, and the legal answer was worth 0.8 of a point. Gated per check, each failure blocks the merge on its own. ([CI gate policy](04-eval-gates/ci-gate-policy.md))
+- **Apply it:** give every check its own gate level and limit. Allow no drop on code checks, which have no noise. Allow a case of noise on a judge check only when a stricter gate downstream still holds the risk, as the Release gate does for inflated facts.
+
 ## Working habits
 
 - **Keep every run as evidence.** Saving each judge run is what made the range in rule 4 measurable after the fact.
