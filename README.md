@@ -19,7 +19,7 @@
 | M3 | **Judge calibration** (κ) | ✅ | `03-eval-suites/judge-calibration.md` |
 | M3 | **Eval Spec** (5-part spec + audience messages) | ✅ | `03-eval-suites/eval-spec.md` |
 | M4 | **Eval gate map** (severity × placement) | ✅ | `04-eval-gates/gate-map.md` |
-| M4 | **CI gate policy** (PR #218 replay) | ☐ | `04-eval-gates/ci-gate-policy.md` |
+| M4 | **CI gate policy** (prompt-rewrite PR) | ✅ | `04-eval-gates/ci-gate-policy.md` |
 | M4 | **Launch strategy** (release criteria + CI policy + mitigation) | ✅ | `04-eval-gates/launch-strategy.md` |
 | M5 | **Coverage matrix** | ☐ | `05-scale/coverage-matrix.md` |
 | M5 | **Eval budget** | ☐ | `05-scale/budget.md` |
@@ -74,7 +74,7 @@ ai-evals/
 │   └── cortex-eval/                  course notebook, not used: the suite targets Ascend IQ instead
 ├── 04-eval-gates/                    ← Module 4
 │   ├── gate-map.md                   severity × pipeline-placement grid
-│   ├── ci-gate-policy.md             CI gate demo (PR #218 replay)
+│   ├── ci-gate-policy.md             CI gate policy and merge call
 │   └── launch-strategy.md            release criteria + CI policy + mitigation
 ├── 05-scale/                         ← Module 5
 │   ├── coverage-matrix.md            coverage across product lines
