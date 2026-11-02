@@ -107,6 +107,18 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 - **What happened:** in the CI practice, a prompt rewrite made Ascend IQ answer 1 of 10 legal questions it should refuse, and got 4 more of 50 answers wrong. Blended across the 130 cases, the score fell from 95.4% to 90.8%, and the legal answer was worth 0.8 of a point. Gated per check, each failure blocks the merge on its own. ([CI gate policy](04-eval-gates/ci-gate-policy.md))
 - **Apply it:** give every check its own gate level and limit. Allow no drop on code checks, which have no noise. Allow a case of noise on a judge check only when a stricter gate downstream still holds the risk, as the Release gate does for inflated facts.
 
+## Monitoring
+
+### 20. Spend continuous checks on the failures nobody can see
+
+- **What happened:** with $200,000 for at most three online evals, I funded Overconfident Tone over Context Specificity, both P1. A client spots a missed ask and asks again; nobody spots a guess stated as fact, and that was 6 of my 20 audited answers. GPT-6, as CPO, read the "Tone" label as phrasing and wanted the swap. The same test put Robustness first in the coverage matrix, on an external product and against the course's guide, because a summary that drops its key finding looks like a good one. ([Eval budget](05-scale/eval-budget.md), [coverage matrix](05-scale/coverage-matrix.md))
+- **Apply it:** rank each failure by whether the user can see it, not by its label or by whether the product is internal or external. Visible failures can wait for an audit; invisible ones need a check on every answer or on a live sample. Read the failure's definition before its label.
+
+### 21. Pair every input monitor with an output check
+
+- **What happened:** my first plan for AI Report Summaries closed the Robustness gap with a drift monitor. GPT-6 asked how it would catch a normal-looking report whose summary drops the key finding. It wouldn't: a drift monitor flags unusual inputs, not bad outputs. The plan now runs a completeness judge on every summary, and drift is a second trigger for the analyst check. ([Coverage matrix](05-scale/coverage-matrix.md))
+- **Apply it:** treat a drift alert as where to look, not as proof that something failed. Every input monitor needs a check on the outputs it's meant to protect.
+
 ## Working habits
 
 - **Keep every run as evidence.** Saving each judge run is what made the range in rule 4 measurable after the fact.
