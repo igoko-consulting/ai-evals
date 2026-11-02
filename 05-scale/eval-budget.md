@@ -49,7 +49,7 @@ Noted, not acted on: US against APAC alone can't show fairness across every mark
 
 ## How this was written
 
-- **In the repo, not the lab tool.** Everything up to "Downgrades" follows the tool's export format; the levels and reasons are mine. The export has no place for why the online evals were chosen or for the critique, so those sections follow it.
+- **Format.** Everything up to "Downgrades" is the lab tool's export format; the levels and reasons are mine. The export has no place for why the online evals were chosen or for the critique, so those sections follow it.
 - **Sample sizes and thresholds are mine;** the tool fixes only the level costs. "Most questions are about US markets today" comes from the course's own Ascend IQ example in Lab 1.
 - **Labels differ from my Module 1 canvas.** The course files Overconfident Tone under UX Trust, which my canvas left out as too subjective. In the canvas's terms it's hallucination rate: claims stronger than the source. The canvas's robustness metric, calibrated refusal, isn't among the lab's five failures; my [Module 5 notes](NOTES.md) carry it as an open gap.
 - **Renamed from `budget.md`** to the current lab's file name.

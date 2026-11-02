@@ -45,7 +45,7 @@ The two cells with a check today.
 
 ## How this was written
 
-- **In the repo, not the lab tool.** Everything up to "After the Pressure Test" follows the tool's export format; the marks, gaps and plan are mine. The sections after it add what the course's older runbook asks for: a method and ground truth for each covered cell.
+- **Format.** Everything up to "After the Pressure Test" is the lab tool's export format; the marks, gaps and plan are mine. The sections after it add what the course's older runbook asks for: a method and ground truth for each covered cell.
 - **Why this product, not Ascend IQ.** The lab maps one of Ascend Analytics' four live AI products. Ascend IQ hasn't launched, so nothing runs on it yet to mark. AI Report Summaries is the closest: the same clients, the same promise of verified data, and summarising was my [Module 1 eval](../01-evaluation-strategy/eval-harness-proof.md).
 - **What carries over to Ascend IQ.** The completeness judge has to meet the bar in my [eval spec](../03-eval-suites/eval-spec.md) before it can block anything. Confirmed misses joining the release test set is the golden set that [Module 4](../04-eval-gates/NOTES.md) found Ascend IQ doesn't have yet. And the manager's question is the Module 3 lesson again: a check on a cheap proxy misses what a judge on the output catches.
 - **The tool's worked examples use the same two metrics for Ascend IQ:** Fairness accepted, Robustness closed. The reasons and checks here are specific to summaries.

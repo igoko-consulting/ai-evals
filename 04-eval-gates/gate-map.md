@@ -67,7 +67,7 @@ No call changed. GPT-6, playing a sceptical engineering lead, questioned where f
 
 ## How this was written
 
-- **In the repo, not the lab tool.** The table and sample interactions follow the tool's export format; the calls and reasons are mine.
+- **Format.** The table and sample interactions are the lab tool's export format; the calls and reasons are mine.
 - **Row numbers are the lab's.** In the [audit log](../02-failure-discovery/audit-log.md) these answers are rows 1, 2, 4, 7, 13 and 16 (lab rows 1, 3, 5, 8, 14 and 17).
 - **Row 3 is gated on latency only.** The audit failed the same answer (audit row 2) under the strict source rule for narrowing "mobile app slow" to "mobile load times", and marked it contested. The lab treats its content as correct, so the gate here covers the 4.2 seconds, not the wording.
 - **The pushback came from GPT-6,** a different model family from Claude, which drafted the options with me, run on the prompt the lab tool builds from these calls.

@@ -32,7 +32,7 @@ The tool's export has one row per gate level, so it leaves out two Hard gates, t
 
 ## How this was written
 
-- **In the repo, not the lab tool.** The release criteria, the request for engineering and the mitigation plan follow the tool's export format. The extra section adds the gates its three rows leave out.
+- **Format.** The release criteria, the request for engineering and the mitigation plan are the lab tool's export format. The extra section adds the gates its three rows leave out.
 - **The Hard row is copied from the [eval spec](../03-eval-suites/eval-spec.md),** as the lab instructs, so the two can't drift apart.
 - **2.0 s is the lab's target, kept as the Soft threshold.** Trust comes before speed in my [strategy canvas](../01-evaluation-strategy/strategy-canvas.md), and that trade-off lives in the PM's override, not in a looser number. A gate set to fit today's build stops being a gate.
 - **No lever ships around a Hard gate.** Today's build fails it: 6 of 20 audited answers (30%) inflate facts, against a bar of zero. The staged rollout applies only once that gate passes.
