@@ -21,7 +21,7 @@
 | M4 | **Eval gate map** (severity × placement) | ✅ | `04-eval-gates/gate-map.md` |
 | M4 | **CI gate policy** (prompt-rewrite PR) | ✅ | `04-eval-gates/ci-gate-policy.md` |
 | M4 | **Launch strategy** (release criteria + CI policy + mitigation) | ✅ | `04-eval-gates/launch-strategy.md` |
-| M5 | **Coverage matrix** | ☐ | `05-scale/coverage-matrix.md` |
+| M5 | **Coverage matrix** (one live product, two gaps) | ✅ | `05-scale/coverage-matrix.md` |
 | M5 | **Eval budget** | ☐ | `05-scale/budget.md` |
 | M6 | **Ship / Hold memo** | ☐ | `06-culture/ship-hold-memo.md` |
 | M6 | **Final pitch deck** (generated HTML) | ☐ | `final-pitch.html` |
