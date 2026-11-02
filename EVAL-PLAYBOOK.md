@@ -1,6 +1,6 @@
 # Eval playbook
 
-What I'd do again on any AI eval project, and the evidence from the Ascend IQ audit behind each rule. Each entry gives the rule, what happened here, and how to apply it next time. Updated as each module adds evidence.
+What I'd do again on any AI eval project, and the evidence from this project behind each rule. Each entry gives the rule, what happened here, and how to apply it next time. Updated as each module adds evidence.
 
 ## Defining good
 
@@ -111,7 +111,7 @@ What I'd do again on any AI eval project, and the evidence from the Ascend IQ au
 
 ### 20. Spend continuous checks on the failures nobody can see
 
-- **What happened:** with $200,000 for at most three online evals, I funded Overconfident Tone over Context Specificity, both P1. A client spots a missed ask and asks again; nobody spots a guess stated as fact, and that was 6 of my 20 audited answers. GPT-6, as CPO, read the "Tone" label as phrasing and wanted the swap. The same test put Robustness first in the coverage matrix, on an external product and against the course's guide, because a summary that drops its key finding looks like a good one. ([Eval budget](05-scale/eval-budget.md), [coverage matrix](05-scale/coverage-matrix.md))
+- **What happened:** with $200,000 for at most three online evals, I funded Overconfident Tone over Context Specificity, both P1 in the lab. A client spots a missed ask and asks again; nobody spots a guess stated as fact, and that's my inflated-facts P0, 6 of my 20 audited answers. GPT-6, as CPO, read the "Tone" label as phrasing and wanted the swap. The same test put Robustness first in the coverage matrix, on an external product and against the course's guide, because a summary that drops its key finding looks like a good one. ([Eval budget](05-scale/eval-budget.md), [coverage matrix](05-scale/coverage-matrix.md))
 - **Apply it:** rank each failure by whether the user can see it, not by its label or by whether the product is internal or external. Visible failures can wait for an audit; invisible ones need a check on every answer or on a live sample. Read the failure's definition before its label.
 
 ### 21. Pair every input monitor with an output check

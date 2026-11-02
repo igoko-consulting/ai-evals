@@ -30,7 +30,7 @@
 ## Why these two are online
 
 - **Data Fabrication (P0, $85,000):** a made-up price or review count breaks the verified-data promise behind $50k+ renewals. Wrong numbers on the core use case were a P0 in my [audit](../02-failure-discovery/failure-taxonomy.md) (rows 1 and 7). The judge is held to the bar in my [eval spec](../03-eval-suites/eval-spec.md): at least 95% recall, no more than 6% false alarms and κ 0.6 or above against human labels. A flagged answer goes to the account owner, who corrects it with the client the same day.
-- **Overconfident Tone (P1, $65,000):** despite the label, this isn't about phrasing. "States guesses as facts" is the inflated facts failure behind my HOLD call: 6 of the 20 audited answers, such as an invited speaker listed as confirmed. A client can't see it, and a cheap check misses it: on fresh answers my Module 3 word rule caught 4 of 13 and the judge 13 of 13 ([eval suite](../03-eval-suites/eval-suite.md)).
+- **Overconfident Tone (P1, $65,000):** despite the label, this isn't about phrasing. "States guesses as facts" is the inflated-facts failure behind my HOLD call: 6 of the 20 audited answers, such as an invited speaker listed as confirmed. A client can't see it, and a cheap check misses it: on fresh answers my Module 3 word rule caught 4 of 13 and the judge 13 of 13 ([eval suite](../03-eval-suites/eval-suite.md)).
 - **Why $50,000 stays unspent:** no third online eval fits or pays its way. Context Specificity would take online spend to $220,000 and Data Bias to $205,000, and Slow Answers online ($25,000) buys nothing a timer doesn't. The cap is a limit, not a target.
 - **One judge may cover both:** my [calibrated rubric](../03-eval-suites/judge-calibration.md) already names any claim its source doesn't support, so one judge call could score both online failures and the real cost come in under $150,000.
 
@@ -51,5 +51,6 @@ Noted, not acted on: US against APAC alone can't show fairness across every mark
 
 - **In the repo, not the lab tool.** Everything up to "Downgrades" follows the tool's export format; the levels and reasons are mine. The export has no place for why the online evals were chosen or for the critique, so those sections follow it.
 - **Sample sizes and thresholds are mine;** the tool fixes only the level costs. "Most questions are about US markets today" comes from the course's own Ascend IQ example in Lab 1.
+- **Labels differ from my Module 1 canvas.** The course files Overconfident Tone under UX Trust, which my canvas left out as too subjective. In the canvas's terms it's hallucination rate: claims stronger than the source. The canvas's robustness metric, calibrated refusal, isn't among the lab's five failures; my [Module 5 notes](NOTES.md) carry it as an open gap.
 - **Renamed from `budget.md`** to the current lab's file name.
 - **The CPO critique came from GPT-6,** a different model family from Claude, which drafted the options with me, run on the lab's critique prompt with this budget pasted in.

@@ -43,7 +43,7 @@ Ascend IQ, an AI agent that answers plain-language market-intelligence questions
 | **A fluent answer can hide a failed path.** Ascend IQ's Stripe and Adyen comparison read well, but its path failed 4 of 6 dimensions, ending with a barred web source cited to the client. | [Trajectory](03-eval-suites/trajectory.md) |
 | **Today's build fails the ship bar.** The eval spec allows zero confirmed inflated answers; the audit found 6 of 20 (30%). | [Eval spec](03-eval-suites/eval-spec.md) |
 | **No rollout plan ships around a failed Hard gate.** Three Hard gates guard the release, each behind an exact or calibrated check. The staged rollout covers only the Soft latency gate, and the inflated-facts gate already fails. | [Launch strategy](04-eval-gates/launch-strategy.md) |
-| **What a client can't see gets the online money.** Guesses stated as facts (6 of 20 audited answers) stay online over missed asks, which clients spot and re-ask. GPT-6, as CPO, read the "Tone" label as phrasing and wanted the swap. | [Eval budget](05-scale/eval-budget.md) |
+| **What a client can't see gets the online money.** Inflated facts (6 of 20 audited answers, filed by the lab as Overconfident Tone) stay online over missed asks, which clients spot and re-ask. GPT-6, as CPO, read the "Tone" label as phrasing and wanted the swap. | [Eval budget](05-scale/eval-budget.md) |
 
 The lessons behind these, written to reuse on other projects, are in [EVAL-PLAYBOOK.md](EVAL-PLAYBOOK.md).
 
@@ -80,7 +80,7 @@ ai-evals/
 │   ├── launch-strategy.md            release criteria + CI policy + mitigation
 │   └── NOTES.md
 ├── 05-scale/                         ← Module 5
-│   ├── coverage-matrix.md            coverage across product lines
+│   ├── coverage-matrix.md            one live product's coverage + gaps
 │   ├── eval-budget.md                eval budget + trade-offs
 │   └── NOTES.md
 └── 06-culture/                       ← Module 6
