@@ -23,7 +23,7 @@
 | M4 | **Launch strategy** (release criteria + CI policy + mitigation) | ✅ | `04-eval-gates/launch-strategy.md` |
 | M5 | **Coverage matrix** (one live product, two gaps) | ✅ | `05-scale/coverage-matrix.md` |
 | M5 | **Eval budget** (two online evals, $150,000 of $200,000) | ✅ | `05-scale/eval-budget.md` |
-| M6 | **Ship / Hold memo** | ☐ | `06-culture/ship-hold-memo.md` |
+| M6 | **Ship / Hold memo** (HOLD: 6 of 20 against a bar of zero) | ✅ | `06-culture/ship-hold-memo.md` |
 | M6 | **Final pitch deck** (generated HTML) | ☐ | `final-pitch.html` |
 
 ## The feature in one sentence
