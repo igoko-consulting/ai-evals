@@ -24,7 +24,7 @@
 | M5 | **Coverage matrix** (one live product, two gaps) | ✅ | `05-scale/coverage-matrix.md` |
 | M5 | **Eval budget** (two online evals, $150,000 of $200,000) | ✅ | `05-scale/eval-budget.md` |
 | M6 | **Ship / Hold memo** (HOLD: 6 of 20 against a bar of zero) | ✅ | `06-culture/ship-hold-memo.md` |
-| M6 | **Final pitch deck** (generated HTML) | ☐ | `final-pitch.html` |
+| M6 | **Final presentation** (from the deliverables builder) | ✅ | `final-presentation.html` |
 
 ## The feature in one sentence
 
@@ -53,7 +53,7 @@ The lessons behind these, written to reuse on other projects, are in [EVAL-PLAYB
 ai-evals/
 ├── README.md                         ← this dashboard
 ├── EVAL-PLAYBOOK.md                  ← lessons to reuse on other projects
-├── final-pitch.html                  ← Module 6, the ship/hold pitch
+├── final-presentation.html           ← Module 6, the final presentation
 ├── 01-evaluation-strategy/           ← Module 1
 │   ├── strategy-canvas.md            user promise, trust metrics, trade-offs
 │   ├── eval-harness-proof.md         first LLM-as-a-Judge eval
