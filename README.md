@@ -44,6 +44,7 @@ Ascend IQ, an AI agent that answers plain-language market-intelligence questions
 | **Today's build fails the ship bar.** The eval spec allows zero confirmed inflated answers; the audit found 6 of 20 (30%). | [Eval spec](03-eval-suites/eval-spec.md) |
 | **No rollout plan ships around a failed Hard gate.** Three Hard gates guard the release, each behind an exact or calibrated check. The staged rollout covers only the Soft latency gate, and the inflated-facts gate already fails. | [Launch strategy](04-eval-gates/launch-strategy.md) |
 | **What a client can't see gets the online money.** Inflated facts (6 of 20 audited answers, filed by the lab as Overconfident Tone) stay online over missed asks, which clients spot and re-ask. GPT-6, as CPO, read the "Tone" label as phrasing and wanted the swap. | [Eval budget](05-scale/eval-budget.md) |
+| **The call is HOLD, with a dated way out.** 6 of 20 audited answers overstate their sources against a bar of zero. The judge that will test the fix works on fresh answers, but its golden set doesn't exist yet and its agreement with human labels isn't measured. | [Ship-or-hold memo](06-culture/ship-hold-memo.md) |
 
 The lessons behind these, written to reuse on other projects, are in [EVAL-PLAYBOOK.md](EVAL-PLAYBOOK.md).
 
@@ -84,7 +85,8 @@ ai-evals/
 │   ├── eval-budget.md                eval budget + trade-offs
 │   └── NOTES.md
 └── 06-culture/                       ← Module 6
-    └── ship-hold-memo.md             ship/hold recommendation
+    ├── ship-hold-memo.md             ship/hold recommendation
+    └── NOTES.md
 ```
 
 Each module folder also holds the course's `LAB.md` runbook. `03-eval-suites/trajectory-traces.csv` is course practice data, not used.

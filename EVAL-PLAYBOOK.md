@@ -119,6 +119,18 @@ What I'd do again on any AI eval project, and the evidence from this project beh
 - **What happened:** my first plan for AI Report Summaries closed the Robustness gap with a drift monitor. GPT-6 asked how it would catch a normal-looking report whose summary drops the key finding. It wouldn't: a drift monitor flags unusual inputs, not bad outputs. The plan now runs a completeness judge on every summary, and drift is a second trigger for the analyst check. ([Coverage matrix](05-scale/coverage-matrix.md))
 - **Apply it:** treat a drift alert as where to look, not as proof that something failed. Every input monitor needs a check on the outputs it's meant to protect.
 
+## Decisions
+
+### 22. Keep evidence that a check works apart from evidence that the product is ready
+
+- **What happened:** my final pitch said the judge "already meets the spec". It meets the catch and false-alarm bar on 30 fresh answers, but its agreement with human labels isn't measured, and the golden set it gates on doesn't exist. GPT-6, as CPO, caught it. ([Ship-or-hold memo](06-culture/ship-hold-memo.md), [final presentation](final-presentation.html))
+- **Apply it:** report the evaluator's results and the gate's result on separate lines. Only the gate's result on held-out data decides.
+
+### 23. Write "not measured yet" rather than fill a gap
+
+- **What happened:** GPT-6 asked for an engineering estimate, ROI for the eval budget and proof that a fabricated figure costs renewals. The repo holds none of them, so I declined. The memo's evidence table marks latency p95, fairness and the judge's agreement with human labels as not measured. ([Ship-or-hold memo](06-culture/ship-hold-memo.md))
+- **Apply it:** when a reviewer asks for a number you don't have, say so and name who would measure it. An invented number in a decision memo is the failure the memo warns about.
+
 ## Working habits
 
 - **Keep every run as evidence.** Saving each judge run is what made the range in rule 4 measurable after the fact.
