@@ -1,4 +1,4 @@
-# Module 1 notes: Define Good, the Answer and the Path
+# Module 1 notes: Define What Good Looks Like for an AI Feature
 
 Session 1, 12 Oct 2026. Sources: Module 1 slides, pre-read, [First Eval Lab walkthrough](https://product-school-platform.github.io/ps-content-library/certifications/aiec/2026.1/Modules/M1%20-%20First%20Eval%20Lab%20Walkthrough.html).
 
@@ -90,7 +90,7 @@ The class discussed both scenarios openly without settling on an answer. My view
 
 - **First eval:** same model and email, two system prompts (A concise, B narrative), optional 1/0 conciseness score from a different model family. Output: [eval-harness-proof.md](eval-harness-proof.md).
 - **Cold start:** an LLM generates about 20 starter rows to get past the blank page. The value is in the human curation after: correcting labels, dropping weak rows, adding the edge cases that matter. That curated set is the golden dataset; calibrating a judge against it (κ) comes in M3.
-- **Strategy canvas:** user promise, top three trust metrics, two pre-committed trade-offs. Output: [strategy-canvas.md](strategy-canvas.md), Slide 1 of the final deck.
+- **Strategy canvas:** user promise, top three trust metrics, two pre-committed trade-offs. Output: [strategy-canvas.md](strategy-canvas.md), the Module 1 card in the [final presentation](../final-presentation.html).
 
 ## What this means for Ascend IQ
 

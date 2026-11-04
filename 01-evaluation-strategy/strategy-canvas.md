@@ -1,6 +1,6 @@
 # AI Evaluation Strategy Canvas
 
-> Repo file `ai-evals/01-evaluation-strategy/strategy-canvas.md`. Becomes the **Strategy Canvas** slide of the final pitch deck (Module 6).
+> Repo file `ai-evals/01-evaluation-strategy/strategy-canvas.md`. Becomes the Module 1 card in the [final presentation](../final-presentation.html).
 
 ## 1. Product Strategy, The Context
 

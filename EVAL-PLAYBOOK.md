@@ -1,6 +1,6 @@
 # Eval playbook
 
-What I'd do again on any AI eval project, and the evidence from this project behind each rule. Each entry gives the rule, what happened here, and how to apply it next time. Updated as each module adds evidence.
+What I'd do again on any AI eval project, and the evidence from this project behind each rule. Each entry gives the rule, what happened here, and how to apply it next time. Built across the six modules.
 
 ## Defining good
 
@@ -77,7 +77,7 @@ What I'd do again on any AI eval project, and the evidence from this project beh
 
 ### 14. Write checks for your failure; generic rules don't transfer
 
-- **What happened:** the course's generic price and legal rules caught 1 of 16 failures, and that one only because a disclaimer was missing, not because the price was stale. Checks written for inflated facts caught all 6 cases. ([Eval suite](03-eval-suites/eval-suite.md))
+- **What happened:** in the course's original three-layer suite, its generic price and legal rules caught 1 of 15 failures, and that one only because a disclaimer was missing, not because the price was stale. Checks written for inflated facts caught all 6 cases. ([Module 3 notes](03-eval-suites/NOTES.md), [eval suite](03-eval-suites/eval-suite.md))
 - **Apply it:** derive every rule from your own failure taxonomy, then check that each catch is the real problem and not a formatting coincidence.
 
 ### 15. A rule written from your audit is in-sample

@@ -1,6 +1,6 @@
 # Failure Taxonomy Canvas · Ascend IQ
 
-> Repo file `ai-evals/02-failure-discovery/failure-taxonomy.md`. Becomes the **Failure Taxonomy** slide of the final pitch deck (Module 6) and feeds the Module 3 eval suite.
+> Repo file `ai-evals/02-failure-discovery/failure-taxonomy.md`. Becomes the Module 2 card in the [final presentation](../final-presentation.html) and feeds the Module 3 eval suite.
 
 ## Top 3 Prioritized Failures
 

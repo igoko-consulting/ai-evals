@@ -1,6 +1,6 @@
 # First LLM-as-a-Judge Eval, Module 1
 
-> Repo file `ai-evals/01-evaluation-strategy/eval-harness-proof.md`. The eval evidence behind the **Eval Results** slide of the final pitch deck (Module 6).
+> Repo file `ai-evals/01-evaluation-strategy/eval-harness-proof.md`. Evidence behind the Module 1 card in the [final presentation](../final-presentation.html).
 
 ## Version A, Concise, system prompt used
 
