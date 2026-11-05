@@ -23,7 +23,7 @@ What I'd do again on any AI eval project, and the evidence from this project beh
 
 ### 4. Report the range, and the core that fails everywhere
 
-- **What happened:** different judges and rubrics gave anywhere from 9 to 15 failures on the same 20 rows, but 8 rows failed under every one. The rubric moved the count more than the model did. ([Judge runs](02-failure-discovery/fixtures/judge-runs.csv))
+- **What happened:** different judges and rubrics gave anywhere from 9 to 15 failures on the same 20 rows, but 8 rows failed under every one. Both the prompt and the model moved the count: on strict prompts Claude failed 15 and GPT-6 9, and GPT-6 failed 9 on one strict prompt and 14 on my written rule. ([Judge runs](02-failure-discovery/fixtures/judge-runs.csv))
 - **Apply it:** never quote a single failure rate. Give the range across rubrics and the rows that fail under all of them; that core is the number leadership can rely on.
 
 ### 5. Check your labels are reproducible
@@ -55,7 +55,7 @@ What I'd do again on any AI eval project, and the evidence from this project beh
 
 ### 10. Keep the answer key out of the judge's prompt, but give it the policy
 
-- **What happened:** with my audit pasted into the prompt, GPT-6's judge failed four rows that weren't the failure being tested (2, 6, 8, 9). In a fresh chat without the audit, all four passed. Without the audit it also failed row 13, a refusal in the mandated wording, because nothing told it that wording was required. One controlled run each way, so supported rather than proven. ([With audit](03-eval-suites/results/gpt6-suite-reply.md), [without](03-eval-suites/results/gpt6-no-audit-reply.md))
+- **What happened:** with my audit pasted into the prompt, GPT-6's judge failed seven rows that weren't the failure being tested (1, 2, 6, 7, 8, 9, 16). In a fresh chat without the audit, all seven passed. Without the audit it also failed row 13, a refusal in the mandated wording, because nothing told it that wording was required. One run each way, and the second also dropped a request for a summary table, so supported rather than proven. ([With audit](03-eval-suites/results/gpt6-suite-reply.md), [without](03-eval-suites/results/gpt6-no-audit-reply.md))
 - **Apply it:** give the judge the question, the answer, the reference, and any policy that defines legitimate behaviour, such as mandated wording or refusal rules. Never give it the expected labels.
 
 ### 11. Agreeing on a score isn't agreeing on the reason
@@ -128,7 +128,7 @@ What I'd do again on any AI eval project, and the evidence from this project beh
 
 ### 23. Write "not measured yet" rather than fill a gap
 
-- **What happened:** GPT-6 asked for an engineering estimate, ROI for the eval budget and proof that a fabricated figure costs renewals. The repo holds none of them, so I declined. The memo's evidence table marks latency p95, fairness and the judge's agreement with human labels as not measured. ([Ship-or-hold memo](06-culture/ship-hold-memo.md))
+- **What happened:** across the two CPO reviews, GPT-6 asked for an engineering estimate, ROI for the eval budget and proof that a fabricated figure costs renewals. The repo holds none of them, so I declined. The memo's evidence table marks latency p95, fairness and the judge's agreement with human labels as not measured. ([Ship-or-hold memo](06-culture/ship-hold-memo.md))
 - **Apply it:** when a reviewer asks for a number you don't have, say so and name who would measure it. An invented number in a decision memo is the failure the memo warns about.
 
 ## Working habits

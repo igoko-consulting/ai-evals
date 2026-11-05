@@ -16,9 +16,9 @@ Evidence: 6 of 20 audited answers (30%) state facts their sources don't support,
 
 Evidence: The rollout's first 5 accounts are top-50 clients at $50k+ a year each, so the rollout alone would expose at least $250k a year of renewals to a build that fails its release gate. The staged rollout was planned for the latency gate, not for facts.
 
-### 3. The hold has a clear exit: the check works, and only its test set is missing
+### 3. The hold has a clear exit: the check catches the failure, and the test set and a human-label check are still missing
 
-Evidence: On 30 fresh answers the judge caught 13 of 13 overstatements with 1 false alarm in 17 (5.9%), inside the spec's bar of 95% caught and 6% false alarms. The sample is small, so the judge has to hold that bar again on the golden set, and none of its 100 held-out questions or 30 regression cases exist yet.
+Evidence: On 30 fresh answers the judge caught 13 of 13 overstatements with 1 false alarm in 17 (5.9%), inside the spec's bar of 95% caught and 6% false alarms. The sample is small, so the judge has to hold that bar again on the golden set and agree with human labels there, and none of its 100 held-out questions or 30 regression cases exist yet.
 
 ## Next Step · Decision Needed
 
@@ -38,7 +38,7 @@ The call stands; four changes. GPT-6, as a sceptical CPO, called HOLD defensible
 | Judge false alarms | 1 of 17 (5.9%) | ≤6% | PASS, small sample | [Eval suite](../03-eval-suites/eval-suite.md) |
 | Judge agreement with human labels | Not measured yet for this judge | κ ≥ 0.6 | Not measured | [Eval spec](../03-eval-suites/eval-spec.md) |
 | False refusals | 2 of 20 | No gate yet | Open | [Failure taxonomy](../02-failure-discovery/failure-taxonomy.md) |
-| Latency p95 | Not measured yet; one audited answer took 4.2 s | Soft: ≤ 2.0 s | Not measured | [Launch strategy](../04-eval-gates/launch-strategy.md) |
+| Latency p95 | Not measured yet; one answer in the gate-map lab took 4.2 s | Soft: ≤ 2.0 s | Not measured | [Launch strategy](../04-eval-gates/launch-strategy.md) |
 | Off-brand tone | 1 of 20 | Advisory: 0% slang | Warning only | [Gate map](../04-eval-gates/gate-map.md) |
 | Fairness | Not measured yet | None set | Not measured | [Module 5 notes](../05-scale/NOTES.md) |
 | Golden set | 0 of 100 held-out questions; 0 of 30 regression cases | ≥100 held-out, ≥30 regression | Not built | [Module 4 notes](../04-eval-gates/NOTES.md) |
@@ -56,5 +56,7 @@ Defining "good enough" meant admitting what a bar can't prove. Zero inflated ans
 
 - **Format.** Everything up to "Next Step" is the lab tool's export format; the call, arguments and ask are mine. The sections after it cover what the course's older runbook asks for.
 - **Overstates means inflated facts.** The memo uses the plainer word for the CPO; it's the inflated-facts P0 everywhere else in the repo.
-- **Derived numbers.** $250k is 5 × $50k, $2.5m is 50 × $50k, and 5.9% is 1 of 17. The dates are my commitments, not engineering estimates.
+- **Written 4 Nov 2026.** The dates in the ask are my commitments, not engineering estimates.
+- **Derived numbers.** $250k is 5 × $50k, $2.5m is 50 × $50k, and 5.9% is 1 of 17.
+- **Argument 3 was tightened on 5 Nov,** after a final review found its title claimed more than the evidence table: the judge's agreement with human labels isn't measured yet.
 - **The pressure test came from GPT-6,** a different model family from Claude, which drafted the options with me, run on the lab's prompt.

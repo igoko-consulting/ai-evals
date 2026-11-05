@@ -52,7 +52,7 @@ Drafted 28 Oct 2026, before class. Sources: Module 4 slides, pre-read, the [revi
 
 ## Labs
 
-- **Lab 1, gate map:** six answers Engineering flagged, each given a gate, a placement and a business reason, then defended against a sceptical engineering lead. Output: [gate-map.md](gate-map.md).
+- **Lab 1, gate map:** six answers Engineering flagged (lab rows 1, 3, 5, 8, 14 and 17, which are audit rows 1, 2, 4, 7, 13 and 16; row numbers in these notes are the lab's), each given a gate, a placement and a business reason, then defended against a sceptical engineering lead. Output: [gate-map.md](gate-map.md).
 - **Lab 2, release criteria:** a Hard, Soft and Advisory row for the PRD, a request for engineering, and a plan for a Soft-gate failure. Output: [launch-strategy.md](launch-strategy.md).
 - **CI practice:** a gate policy for a pull request that rewrites the answer prompt, and the merge call. Output: [ci-gate-policy.md](ci-gate-policy.md).
 
@@ -61,11 +61,11 @@ Drafted 28 Oct 2026, before class. Sources: Module 4 slides, pre-read, the [revi
 - **The headline moment in my domain:** Ascend IQ passing off unverified data as verified. A VP repeats an inflated fact in a board pack, such as a "seamless" HubSpot integration that actually runs through Zapier, or a competitor's fees taken from a blog post, and the trail leads back to Ascend. For a company that sells verified data at $50k+ a year, that's the story. It's the course's missing-gate pattern, and my trajectory lab found a live case: a barred web search cited to a client.
 - **The non-negotiable rule:** every claim comes from a sanctioned, verified source and says no more than that source does. Code fails any answer citing a source outside the sanctioned set, and the inflated-facts judge fails any claim stronger than its source. Threshold: zero confirmed in at least 100 held-out questions, with the judge at 95% recall or better. A Hard gate at release.
 - **The hardest row to place:** row 8, the API comparison. It carries the same Hallucination label as rows 1 and 5, and it's the row GPT-6 would change first: it wanted a code check on the pull request. I kept the Hard gate on the judge in staging and added the code check as a warning, because my Module 3 word rule caught 4 of 13 fresh failures and raised 5 false alarms in 17.
-- **The trade-off I debated:** three Hard gates against the course's guide that about 80% of gates should be Soft. Each of mine sits behind an exact check (pricing) or a calibrated judge (rows 5 and 8), so none blocks on noise, and the cost is a judge call per answer in staging. The pressure is real, though: the CPO wants the top 50 accounts next month, and a Hard gate is the one call no one can override.
+- **The trade-off I debated:** three Hard gates against the course's guide that about 80% of gates should be Soft. Each of mine sits behind an exact check (pricing) or a judge held to the eval spec's bar (rows 5 and 8), so none blocks on noise once that bar is met, and the cost is a judge call per answer in staging. The pressure is real, though: the CPO wants the top 50 accounts next month, and a Hard gate is the one call no one can override.
 
 ## What this means for Ascend IQ
 
 - **The launch strategy confirms HOLD:** the inflated-facts Hard gate fails today, at 6 of 20 answers, and no rollout lever ships around a Hard gate. The staged rollout only covers the latency Soft gate.
 - **The gate map has no source gate:** the lab's six rows don't include the barred web source from my trajectory lab. A code check that answers cite only sanctioned sources is the first gate I'd add.
 - **A Hard gate is only as good as its judge:** my rubric reached 12 of 12 in calibration, but on the same 12 answers it was written to fix. The Hard gates on rows 5 and 8 need that judge re-measured on new answers before they go live.
-- **The golden set doesn't exist yet:** the gates assume at least 30 regression cases and 100 held-out questions. I have the 20 audited answers and 30 fresh ones. Building the set is the first ask of engineering.
+- **The golden set doesn't exist yet:** it has two parts, a frozen held-out set of at least 100 questions for the Release gate and a regression set of at least 30 cases that grows with every confirmed miss. I have the 20 audited answers and 30 fresh ones. Building the set is the first ask of engineering.

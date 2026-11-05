@@ -40,7 +40,7 @@ A fresh judge using the rewritten rubric, one answer per call, agreed with me on
 
 ## How this was run
 
-- **My labels:** all 12 answers labelled before seeing the judge's calls ([sheet](fixtures/calibration-label-sheet.md)). I changed answer 12 from FAIL to PASS on review: the source says "about 140" and the answer says "About 140", which is grounded and direct.
+- **My labels:** all 12 answers labelled before seeing the judge's calls ([sheet](fixtures/calibration-label-sheet.md)). After seeing the judge's calls, I changed answer 12 from FAIL to PASS as I refined my rule: the source says "about 140" and the answer says "About 140", which is grounded and direct. The change moved my labels towards the judge's: with my original label, κ would be 0.17, so the judge fails the gate either way.
 - **The judge's calls:** the course tool's fixed calls for the original rubric, and Claude Haiku 5.5 in a fresh context per answer for the rewritten one.
 - **Examples written fresh:** the rubric's two examples are new, not taken from the 12 answers, so the re-measure doesn't hand the judge the answers it is scored on.
-- **Limit:** the rubric was written after reading these 12 disagreements, so κ 1.00 on the same 12 is optimistic. The out-of-sample evidence for this style of rubric is the [fresh test](eval-suite.md) in Lab 1, where a judge with an explicit unsupported-claim rule caught 13 of 13. Twelve answers is a small sample; κ swings a long way on one disagreement.
+- **Limit:** the rubric was written after reading these 12 answers and their 4 disagreements, so κ 1.00 on the same 12 is optimistic, and the rubric hasn't been tested on new answers. The nearest out-of-sample evidence is the [fresh test](eval-suite.md) in Lab 1, where a judge written for one named failure caught 13 of 13. Twelve answers is a small sample; κ swings a long way on one disagreement.

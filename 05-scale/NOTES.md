@@ -13,7 +13,7 @@ Drafted 2 Nov 2026. Sources: Module 5 slides, pre-read and the [revised lab guid
 - **Sample, don't score everything:** score a random sample, more of the high-risk questions such as pricing, and every request a cheap check flags. Engineering builds it; the PM requires that live traffic is recorded, scored and sampled. Missed: the sampling rule is where the budget is really set. The lab prices an online eval as continuous, while the slide says to score a sample.
 - **Match the monitor to the risk:** code-based checks keep running after launch, and two more kinds of monitoring catch what they miss. Missed: neither monitor reads the user. [Module 3](../03-eval-suites/NOTES.md) left real-user signals, such as thumbs down and repeat questions, to this module, and the course doesn't come back to them. Lab 2 relies on one, the client asking again after a missed ask, so a repeat-question rate would turn that defence into a measure.
 
-| Monitor | What it does | What it catches | Ascend IQ example |
+| Monitor | What it does | What it catches | Course's Ascend IQ example |
 |---|---|---|---|
 | Drift monitor | Compares the questions live users ask with the ones the product was built and tested on | New kinds of questions, users or topics the tests don't cover | Alerts when the mix of industries, company sizes or question types moves away from the golden set |
 | Periodic audit | People review a sample of high-risk answers on a set schedule | Bias and fairness gaps only a person can judge | A quarterly sample of US and APAC briefs, compared for uneven coverage |

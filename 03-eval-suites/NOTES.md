@@ -66,7 +66,7 @@ Sessions 3 and 4, from 26 Oct 2026. Sources: Module 3 slides, pre-read, and the 
 | Addition | Why it helps | Evidence from my repo |
 |---|---|---|
 | Trajectory evals | Show whether a right answer came from a sound path, and where a failure began | Rows 1 and 8 look like retrieval failures, which an output-only audit can't prove |
-| Testing the evaluator | κ against humans, run-to-run stability and cross-family agreement; a golden set is only as good as the judge scoring against it | One row per call changed 0 of 20 calls, batched changed 2 of 20; the audit in the prompt flipped 4 rows |
+| Testing the evaluator | κ against humans, run-to-run stability and cross-family agreement; a golden set is only as good as the judge scoring against it | One row per call changed 0 of 20 calls, batched changed 2 of 20; the audit in the prompt flipped 7 rows |
 | Fresh and adversarial cases | Rules written from your own audit flatter themselves | The word rule caught 6 of 6 in-sample and 4 of 13 on fresh answers |
 | Checks against a source of truth | Exact, cheap checks for rigid facts: prices against the pricing system, mandated wording against policy | Row 13's "ongoing" was policy, not a hallucination |
 | Operational metrics | Latency, cost per task and step count, which a text audit can't see | My Module 1 latency metric was untestable from the logs |

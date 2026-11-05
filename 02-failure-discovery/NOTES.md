@@ -79,5 +79,5 @@ My answers, from the calls I made in the audit and taxonomy.
 
 - **Latency can't be audited here:** the logs have no timings, so one of my three trust metrics is untested by this module.
 - **The source column hints at causes:** a cached pricing page points to data freshness, not the model, which is the doctor lens in practice.
-- **The count depends on the rubric, the core doesn't:** judges and rubrics gave 9 to 15 failures, but 8 rows failed under every one. 4 of the 6 inflated facts are among them, so the HOLD doesn't depend on the rubric.
+- **The count depends on the judge, the core doesn't:** judges and rubrics gave 9 to 15 failures, but 8 rows failed under every one. 4 of the 6 inflated facts are among them, so the HOLD doesn't depend on the rubric.
 - **Check the policy before blaming the agent:** row 13 looked like a hallucination until the mandated refusal wording turned up in Module 3.
